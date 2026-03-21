@@ -663,9 +663,18 @@ async def main():
         "decision_date", "scenario", "strategy_type", "cum_pnl", "sharpe"
     ]])
     print(result["overall_metrics"])
-
-    result["monthly_df"].to_csv("monthly_summary_2024.csv", index=False)
-    result["full_mtm_df"].to_csv("full_mtm_path_2024.csv", index=False)
+    
+    out_path = "./outputs"
+    os.makedirs(out_path, exist_ok=True)
+    run_id = result["run_id"]
+    result["monthly_df"].to_csv(
+        os.path.join(out_path, f"monthly_summary_{run_id}.csv"),
+        index=False
+    )
+    result["full_mtm_df"].to_csv(
+        os.path.join(out_path, f"full_mtm_path_{run_id}.csv"),
+        index=False
+    )
 
 if __name__ == "__main__":
     asyncio.run(main())
