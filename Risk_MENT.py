@@ -1,7 +1,4 @@
-# utils/risk_management.py
-
 import pandas as pd
-
 
 def apply_risk_management(
     mtm_df: pd.DataFrame,
