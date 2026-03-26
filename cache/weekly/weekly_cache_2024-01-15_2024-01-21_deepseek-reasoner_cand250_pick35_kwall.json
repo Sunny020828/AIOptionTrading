@@ -1,0 +1,77 @@
+{
+  "candidate_count": 177,
+  "selected_count": 35,
+  "selected_urls": [
+    "https://hk.finance.yahoo.com/news/%E7%BE%8E%E5%9C%98%E8%82%A1%E5%83%B9%E8%B7%8C%E7%A0%B42018%E5%B9%B4%E7%99%BC%E8%A1%8C%E5%83%B9-%E9%AB%98%E7%9B%9B%E8%AA%8D%E7%82%BA%E5%B8%82%E5%A0%B4%E9%81%8E%E5%BA%A6%E6%82%B2%E8%A7%80-073911963.html",
+    "https://ec.ltn.com.tw/article/breakingnews/4557833",
+    "https://www.epochtimes.com/b5/24/1/20/n14162297.htm",
+    "https://finance.mingpao.com/fin/daily/20240119/1705601101527/%E4%B8%8A%E6%9C%88%E4%BA%BA%E6%B0%91%E5%B9%A3%E5%9C%8B%E9%9A%9B%E6%94%AF%E4%BB%98%E6%AF%94%E4%BE%8B%E8%B7%8C%E5%87%BA%E4%B8%89%E7%94%B2",
+    "https://ps.hket.com/article/3691902/%E5%85%B1%E5%B1%85%E5%93%81%E7%89%8C%E5%A4%A5%E5%A4%96%E8%B3%87%E5%9F%BA%E9%87%91%E5%85%A5%E5%B8%82%E4%B8%8A%E7%92%B0%E5%85%A8%E5%B9%A2%E9%85%92%E5%BA%97%20%E9%80%A0%E5%83%B93.2%E5%84%84%E5%85%83",
+    "http://big5.news.cn/gate/big5/www.xinhuanet.com/sikepro/20240119/37cc141d354e4b09951b94112d2d0aec/c.html",
+    "https://eastweek.stheadline.com/witness/3073/%E7%BE%8E%E5%9C%8B%E5%8B%A2%E6%B8%9B%E6%81%AF-%E8%BF%BD%E6%8F%B8%E6%B2%BD%E5%A4%A7%E8%A7%A3%E6%A7%8B-%E4%B8%89%E8%B7%91%E5%82%B5%E7%9E%93%E8%BA%AB%E6%8A%BD%E6%94%BB%E7%95%A5",
+    "https://www.storm.mg/article/4991431",
+    "https://hk.finance.yahoo.com/news/%E5%A4%96%E8%B3%87%E6%92%A4%E9%9B%A2-%E6%B3%95%E7%9B%9B-%E5%A4%96%E8%B3%87%E5%B0%87%E5%8A%A0%E9%80%9F%E6%92%A4%E9%9B%A2%E4%B8%AD%E5%9C%8B-071405031.html",
+    "http://www.wenweipo.com/epaper/view/newsDetail/1747679305577664512.html",
+    "https://news.futunn.com/hk/post/36759591/aia-01299-hk-received-194-additional-shares-of-common-stock",
+    "https://www.hk01.com/%E8%B2%A1%E7%B6%93%E5%BF%AB%E8%A8%8A/979582/%E7%BE%8E%E5%9C%98%E6%9C%80%E6%96%B0%E8%B7%8C%E7%A9%BF69%E5%85%83ipo%E5%AE%9A%E5%83%B9-%E8%82%A1%E5%83%B9%E8%BC%83%E9%AB%98%E4%BD%8D%E6%8F%9285-%E5%B8%82%E5%80%BC%E8%92%B8%E7%99%BC2%E8%90%AC%E5%84%84",
+    "https://www.capital-hk.com/column/charlottezhang-20230518",
+    "https://www.hkej.com/dailynews/investment/article/3664294/%25E5%25B0%258B%25E5%25BA%2595%25E5%258B%25BF%25E5%258D%259A%25E5%25BD%2588-%25E9%258A%2580%25E8%25A1%258C%25E5%259C%25B0%25E7%2594%25A2%25E8%2582%25A1%25E6%259C%2589%25E9%259B%25A3",
+    "https://wantrich.chinatimes.com/news/20240118900037-420101",
+    "https://www.ig.com/cn/news-and-trade-ideas/_2023_gdp_5-2-_14-240117",
+    "https://www.hkej.com/instantnews/china/article/3663706/%25E6%259D%258E%25E5%25BC%25B7-%25E9%25A1%2598%25E7%25A0%2594%25E7%25A9%25B6%25E5%2592%258C%25E8%25A7%25A3%25E6%25B1%25BA%25E5%25A4%2596%25E8%25B3%2587%25E5%259C%25A8%25E8%258F%25AF%25E7%25B6%2593%25E7%2587%259F%25E5%259B%25B0%25E9%259B%25A3%25E8%2588%2587%25E5%2595%258F%25E9%25A1%258C",
+    "https://www.hkex.com.hk/news/regulatory-announcements/2024/240312news?sc_lang=",
+    "https://www.ctwant.com/article/312029",
+    "https://www.exmoo.com/article/229764.html",
+    "https://www.alibabanews.com/%E9%98%BF%E9%87%8C%E5%B7%B4%E5%B7%B4%E5%B9%B3%E5%8F%B0%E5%8A%A9%E5%8A%9B%E7%BE%8E%E5%9C%8B%E5%93%81%E7%89%8C%E9%81%94%E6%88%90662%E5%84%84%E7%BE%8E%E5%85%83%E9%8A%B7%E5%94%AE%E9%A1%8D",
+    "https://www.dw.com/zh-hant/%E4%B8%AD%E5%9C%8B2023%E5%B9%B4%E7%B6%93%E6%BF%9F%E6%88%90%E9%95%B752-%E5%89%8D%E6%99%AF%E4%BB%8D%E4%B8%8D%E6%A8%82%E8%A7%80/a-68006427",
+    "https://www.hkej.com/dailynews/finnews/article/3663404/%25E6%259D%25B1%25E4%25BA%259E%25E8%2596%25A63%25E6%259D%25BF%25E5%25A1%258A%25E5%258F%2597%25E6%2583%25A0%25E7%25BE%258E%25E6%25B8%259B%25E6%2581%25AF",
+    "https://www.hkej.com/instantnews/stock/article/3663920/%25E6%2581%2592%25E6%258C%2587%25E7%2580%2589670%25E9%25BB%259E%25E5%25BE%258C%25E8%25B7%258C%25E5%25B9%2585%25E7%2595%25A5%25E6%2594%25B6%25E7%25AA%2584-%25E5%2595%2586%25E6%25B9%25AF%25E5%25B0%258F%25E9%25B5%25AC%25E7%25A7%2591%25E6%258C%2587%25E6%259C%2580%25E5%2582%25B7",
+    "https://www.seftb.org/cp-4-2197-baa7f-1.html",
+    "https://www.hk01.com/%E8%B2%A1%E7%B6%93%E5%BF%AB%E8%A8%8A/981649/%E9%AB%98%E7%9B%9B%E7%9C%8B%E5%A5%BD8%E9%9A%BB%E7%A7%91%E7%B6%B2%E8%82%A1-%E9%99%84%E5%90%8D%E5%96%AE-%E5%8F%A6%E9%BB%9E%E5%87%BA8%E5%A4%A7%E9%97%9C%E9%8D%B5%E4%B8%BB%E9%A1%8C",
+    "https://finance.mingpao.com/fin/instantf/20240116/1705377214679/%E5%B9%B3%E5%AE%89%E9%8A%80%E8%A1%8C%E6%93%9A%E5%A0%B1%E5%B0%8741%E9%96%93%E7%99%BC%E5%B1%95%E5%95%86%E5%88%97%E5%85%A5%E5%8F%AF%E7%8D%B2%E8%9E%8D%E8%B3%87%E6%94%AF%E6%8C%81%E5%90%8D%E5%96%AE-%E6%96%B0%E5%9C%B0-%E6%96%B0%E4%B8%96%E7%95%8C%E5%9C%A8%E5%88%97",
+    "https://wealth.hket.com/article/3684793/%E3%80%90%E6%A9%9F%E7%AE%A1%E5%B1%80%E5%82%B5%E5%88%B8%E3%80%91%E5%89%B5%E9%80%A03%E5%80%8D%E5%88%A9%E6%81%AF%EF%BC%81%E5%81%9A5%E5%8E%98%E5%AE%9A%E5%AD%98%E3%80%80%E5%86%8D%E6%8A%BD4.25%E5%8E%98%E5%82%B5%E5%88%B8%E3%80%80%E9%95%B7%E7%9F%AD%E9%AB%98%E6%81%AF%E9%80%9A%E5%90%83",
+    "https://www.hkej.com/instantnews/hongkong/article/3663130/%25E6%259D%25B1%25E4%25BA%259E-%25E6%2581%2592%25E6%258C%2587%25E4%25BB%258A%25E5%25B9%25B4%25E7%259B%25AE%25E6%25A8%2599%25E5%2583%25B919500%25E9%25BB%259E",
+    "https://www.hkej.com/dailynews/headline/article/3662480/MLF%25E8%25B6%2585%25E9%25A1%258D%25E7%25BA%258C%25E5%2581%259A9950%25E5%2584%2584%25E7%2584%25A1%25E6%25B8%259B%25E6%2581%25AF",
+    "https://research.hktdc.com/tc/article/MTU4NzQyOTI0Nw",
+    "https://www.hk01.com/%E8%B2%A1%E7%B6%93%E5%BF%AB%E8%A8%8A/981339/%E6%BB%99%E8%B1%90%E5%94%B1%E5%A5%BD%E9%95%B7%E5%BB%BA%E8%88%87%E6%B8%AF%E7%87%88%E5%8F%8A%E9%9B%BB%E8%83%BD-%E4%BA%88-%E8%B2%B7%E5%85%A5-%E8%A9%95%E7%B4%9A-%E5%8D%87%E7%9B%AE%E6%A8%99%E5%83%B9",
+    "https://www.exmoo.com/article/229663.html",
+    "https://businessfocus.io/article/239325/%E6%A8%93%E5%83%B9%E5%A4%A7%E8%B7%8C-%E5%9C%B0%E7%94%A2%E5%95%86-%E5%8A%A0%E6%81%AF%E6%BD%AE",
+    "https://www.exmoo.com/article/229659.html"
+  ],
+  "analysis": {
+    "direction_probs": {
+      "bull": 0.2,
+      "bear": 0.5,
+      "range": 0.3
+    },
+    "volatility_probs": {
+      "low_vol": 0.2,
+      "medium_vol": 0.3,
+      "high_vol": 0.5
+    },
+    "strategy_background": "港股受地缘政治和外资流出压力，经济数据疲软，但美联储降息预期提供支撑，预计市场震荡偏弱。",
+    "key_drivers": [
+      "Geopolitical tensions affecting investor sentiment",
+      "Foreign capital flows and withdrawal from Chinese assets",
+      "Expectations of US Federal Reserve interest rate cuts",
+      "Chinese economic data and policy support measures",
+      "Performance of major stocks like Meituan and tech sector"
+    ],
+    "main_risks": [
+      "Escalation of geopolitical conflicts, e.g., in Taiwan Strait",
+      "Accelerated foreign investment outflows from China",
+      "Weak Chinese economic data or insufficient policy stimulus",
+      "High volatility from global market spillovers",
+      "Liquidity risks in Hong Kong property and banking sectors"
+    ],
+    "scenario": "bear_highvol"
+  },
+  "elapsed_sec": 258.279,
+  "created_at": 1774528614.598999,
+  "meta": {
+    "model_name": "deepseek-reasoner",
+    "candidate_limit": 250,
+    "max_pick_for_fulltext": 35,
+    "keyword": null
+  }
+}

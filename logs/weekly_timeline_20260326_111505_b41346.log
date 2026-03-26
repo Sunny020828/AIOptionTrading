@@ -1,0 +1,35 @@
+2026-03-26 19:15:05,125 | INFO | RUN START | run_id=weekly_timeline_20260326_111505_b41346 | start_date=2024-01-01 | end_date=2024-12-31 | model_name=deepseek-reasoner | account_value=1000000.00 | risk_pct=0.0100 | save_db=True
+2026-03-26 19:15:10,999 | INFO | Weekly windows built | n_windows=52
+2026-03-26 19:15:11,188 | INFO | [01/52] WEEK START | decision_date=2024-01-07 | entry_date=2024-01-08 | exit_date=2024-01-12 | cumulative_offset_before=0.00
+2026-03-26 19:15:11,191 | INFO | WEEKLY PIPELINE START | week_start=2024-01-01 | week_end=2024-01-07 | candidate_limit=250 | max_pick_for_fulltext=35 | model=deepseek-reasoner
+2026-03-26 19:15:11,263 | INFO | candidates fetched=169
+2026-03-26 19:15:12,498 | INFO | llm selected count=0
+2026-03-26 19:15:12,503 | WARNING | [2024-01-07] news_result not ok | status=llm_selected_none | week_start=2024-01-01 | week_end=2024-01-07
+2026-03-26 19:15:12,503 | INFO | [02/52] WEEK START | decision_date=2024-01-14 | entry_date=2024-01-15 | exit_date=2024-01-19 | cumulative_offset_before=0.00
+2026-03-26 19:15:12,503 | INFO | WEEKLY PIPELINE START | week_start=2024-01-08 | week_end=2024-01-14 | candidate_limit=250 | max_pick_for_fulltext=35 | model=deepseek-reasoner
+2026-03-26 19:15:12,534 | INFO | candidates fetched=185
+2026-03-26 19:19:08,819 | INFO | llm selected count=33
+2026-03-26 19:19:33,197 | INFO | selected fulltext saved to db | rows=33
+2026-03-26 19:20:14,726 | INFO | WEEKLY PIPELINE END | status=ok | selected=33 | scenario=bear_medianvol | elapsed=302.225s
+2026-03-26 19:20:15,808 | INFO | [2024-01-14] WEEK BACKTEST DONE | scenario=bear_medianvol | cum_pnl=2700.0 | return_pct=0.0027 | sharpe=12.664349414145448 | max_dd=0.0 | elapsed_cum=310.68s
+2026-03-26 19:20:15,831 | ERROR | RUN FAILED | run_id=weekly_timeline_20260326_111505_b41346 | error=1054 (42S22): Unknown column 'model' in 'field list'
+Traceback (most recent call last):
+  File "I:\Applications\Anaconda\envs\trading\Lib\site-packages\mysql\connector\connection_cext.py", line 772, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'model' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "e:\Project\6000C_AIOptionTrading\weekly_pipeline.py", line 709, in run_full_weekly_timeline
+    save_performance_record(
+  File "e:\Project\6000C_AIOptionTrading\db\operations.py", line 241, in save_performance_record
+    cur.execute(
+  File "I:\Applications\Anaconda\envs\trading\Lib\site-packages\mysql\connector\cursor_cext.py", line 353, in execute
+    self._connection.cmd_query(
+  File "I:\Applications\Anaconda\envs\trading\Lib\site-packages\mysql\connector\opentelemetry\context_propagation.py", line 97, in wrapper
+    return method(cnx, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "I:\Applications\Anaconda\envs\trading\Lib\site-packages\mysql\connector\connection_cext.py", line 781, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'model' in 'field list'

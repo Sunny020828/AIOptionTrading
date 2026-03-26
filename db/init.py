@@ -92,46 +92,72 @@ def create_news_table(conn) -> None:
     print("Table `news` checked/created.")
 
 
+# def create_performance_table(conn) -> None:
+#     """
+#     Create the performance table.
+#     """
+#     sql = """
+#     CREATE TABLE IF NOT EXISTS performance (
+#         id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+#         run_id VARCHAR(128) NOT NULL,
+#         model_name VARCHAR(255) NOT NULL,
+#         task_name VARCHAR(255) DEFAULT NULL,
+#         metric_date DATE DEFAULT NULL,
+#         horizon VARCHAR(64) DEFAULT NULL,
+#         accuracy DECIMAL(10,6) DEFAULT NULL,
+#         precision_score DECIMAL(10,6) DEFAULT NULL,
+#         recall_score DECIMAL(10,6) DEFAULT NULL,
+#         f1_score DECIMAL(10,6) DEFAULT NULL,
+#         auc_score DECIMAL(10,6) DEFAULT NULL,
+#         mae DECIMAL(18,8) DEFAULT NULL,
+#         rmse DECIMAL(18,8) DEFAULT NULL,
+#         sharpe_ratio DECIMAL(18,8) DEFAULT NULL,
+#         max_drawdown DECIMAL(18,8) DEFAULT NULL,
+#         annual_return DECIMAL(18,8) DEFAULT NULL,
+#         information_ratio DECIMAL(18,8) DEFAULT NULL,
+#         notes TEXT DEFAULT NULL,
+#         created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+#         updated_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+#         PRIMARY KEY (id),
+#         KEY idx_perf_run_id (run_id),
+#         KEY idx_perf_model_name (model_name),
+#         KEY idx_perf_metric_date (metric_date),
+#         KEY idx_perf_task_name (task_name)
+#     ) ENGINE=InnoDB
+#       DEFAULT CHARSET=utf8mb4
+#       COLLATE=utf8mb4_unicode_ci
+#     """
+#     cursor = conn.cursor()
+#     cursor.execute(sql)
+#     cursor.close()
+#     print("Table `performance` checked/created.")
 def create_performance_table(conn) -> None:
     """
-    Create the performance table.
+    重新创建 performance 表，使其与 save_performance_record 的逻辑匹配。
     """
-    sql = """
-    CREATE TABLE IF NOT EXISTS performance (
+    cursor = conn.cursor()
+    
+    
+    # 2. 创建新表，完全对应你的 save_performance_record 写入逻辑
+    sql = f"""
+    CREATE TABLE {"performance"} (
         id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
         run_id VARCHAR(128) NOT NULL,
-        model_name VARCHAR(255) NOT NULL,
-        task_name VARCHAR(255) DEFAULT NULL,
-        metric_date DATE DEFAULT NULL,
-        horizon VARCHAR(64) DEFAULT NULL,
-        accuracy DECIMAL(10,6) DEFAULT NULL,
-        precision_score DECIMAL(10,6) DEFAULT NULL,
-        recall_score DECIMAL(10,6) DEFAULT NULL,
-        f1_score DECIMAL(10,6) DEFAULT NULL,
-        auc_score DECIMAL(10,6) DEFAULT NULL,
-        mae DECIMAL(18,8) DEFAULT NULL,
-        rmse DECIMAL(18,8) DEFAULT NULL,
-        sharpe_ratio DECIMAL(18,8) DEFAULT NULL,
-        max_drawdown DECIMAL(18,8) DEFAULT NULL,
-        annual_return DECIMAL(18,8) DEFAULT NULL,
-        information_ratio DECIMAL(18,8) DEFAULT NULL,
-        notes TEXT DEFAULT NULL,
-        created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-        updated_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+        created_at DATETIME NOT NULL,
+        model VARCHAR(255) NOT NULL,          -- 对应你的写入字段 model
+        reasoning TEXT DEFAULT NULL,          -- 对应你的写入字段 reasoning
+        prediction_json JSON DEFAULT NULL,    -- 存储预测详情
+        performance_metrics JSON DEFAULT NULL, -- 存储指标详情
         PRIMARY KEY (id),
         KEY idx_perf_run_id (run_id),
-        KEY idx_perf_model_name (model_name),
-        KEY idx_perf_metric_date (metric_date),
-        KEY idx_perf_task_name (task_name)
+        KEY idx_perf_model (model)
     ) ENGINE=InnoDB
       DEFAULT CHARSET=utf8mb4
       COLLATE=utf8mb4_unicode_ci
     """
-    cursor = conn.cursor()
     cursor.execute(sql)
     cursor.close()
-    print("Table `performance` checked/created.")
-
+    print(f"Table `{'performance'}` has been RECREATED successfully.")
 
 def init_database() -> None:
     """

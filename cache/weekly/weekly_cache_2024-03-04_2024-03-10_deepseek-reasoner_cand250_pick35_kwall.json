@@ -1,0 +1,75 @@
+{
+  "candidate_count": 208,
+  "selected_count": 35,
+  "selected_urls": [
+    "https://news.google.com/rss/articles/CBMingJBVV95cUxNV3pPQ19IQzlYZEV6eDE5TTZheERxY2FkZ3ljaENabElNS09YT2dEampPRFI1OUJ0UHBVQ3BFblpZV25TNnFmdnJYOUlVM3B1ekM0QnRYZVVBZEZjakt3Mjd5RW9vMjNmTi16UkFUaF82UEhVdVNrWWNnYzFURHN6djV4Z1RYLXM0dFltRzZiMG1ja1lTWHVjR1FWMUpZdDR6TktENDRuMDRyZXFjVUd3VFJCZExIM3prOVFnU2h1bE53TzczbHdvWkkyUXpRelhYYjR6Z1pBeTdMb3J3dkhROUhTcEg0aFI4LWkwMEdybVl1bjBIQ2hvTnFJeU1fTS1qdUxjSEhWLW5BVDk0a3VaME9wTWV6MXk1VmxQQnhR?oc=5&hl=en-US&gl=US&ceid=US%3Aen",
+    "https://news.google.com/rss/articles/CBMi-gJBVV95cUxQUVJsWjhac29YcGZoUWRjNGJnZUNCTkJOQU5HTW9oN2pWVXJmaTJXMzBkS3RxY09Ed01penZ2R0F1TDNfNWpjQkcwYXVvYlJCZE5ydHc2T25SY3I1VkFUbDd0ZmV4SGZkQXlnMy1qclRWbEZXYjFJV1Jmd0FNbGhOdE1BMkFjdlZvaEg0YzBKRlNzNEVoZWRRc0FabU1INGZCZWpIWk5wek5FdFNxOXZ6Q2xZRTdhVU9aVFB6SzNSQVdoaG4tMzBfWGdpT2xBVWlQdGRZVlNhaW5XaTRYSkp3bU05R0pPTGpKSVlQamJMaVpDcW9CMndiRzJaWVFveWRzb244aWlST3VMSkV3dXRqRkJWSzA1dXNrSUdici1MQU1zbXN1LWtyNFZjR1g3WGg5Rl9OSEVHTDZVc1BmS1IzNmtFSWs4cy0xSmVlRnZoM0ZiNnpUTXI3UHFNZldMZmcyQ1FXdXNqMm9fdzBoYUd0d21KTEt3eTg3WkE?oc=5&hl=en-US&gl=US&ceid=US%3Aen",
+    "https://m.hkej.com/featuresmob/article/%E6%B8%AF%E7%89%88%E5%9C%8B%E5%AE%89%E6%B3%95%E6%9C%80%E6%96%B0%E7%99%BC%E5%B1%95/3083192703/%E8%B6%99%E6%A8%82%E9%9A%9B%EF%BC%9A%E8%90%BD%E5%AF%A6%E7%89%B9%E5%8D%80%E8%AD%B7%E5%9C%8B%E5%AE%89%E6%B3%95%E5%88%B6",
+    "https://www.hkej.com/dailynews/investment/article/3702579",
+    "https://ec.ltn.com.tw/article/breakingnews/4602177",
+    "https://news.google.com/rss/articles/CBMiX0FVX3lxTFBLdkZYU0JWSFdPS2VLcU0zMTJaUkNpcWhwX3ZQSk9VN21uaHNOYVZVOHp1UU5mSlB2TGJJUDJCR2pZamd4d0FQSFBoZUEwejBEaVFhOXduSXNNWm8xV09j?oc=5&hl=en-US&gl=US&ceid=US%3Aen",
+    "https://news.google.com/rss/articles/CBMiVEFVX3lxTE85c3M5TTVnSExKMkxpdnNZb2lNcVdkU1lkQTFNUkVPcjllazltY3NEMkRBNU1MV2trOHk1ZzdVeTF2WkdmX1RySXk5SWVKbmhUM2hyeg?oc=5&hl=en-US&gl=US&ceid=US%3Aen",
+    "https://news.google.com/rss/articles/CBMiTEFVX3lxTE82a3VQSDU1WGhXU0d6X2h1TDJkQ0VwTTN6SjZ4Slh4MnhSOFVUcHBQelVoMTZKS2xnU2xENzNodU5uTGhPYThvVWlPZk8?oc=5&hl=en-US&gl=US&ceid=US%3Aen",
+    "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1BZnRNMnNiQ1g3ZE5ZVUxodVZwaTBoTkQ4WUw4UDdraERGd2taSjRXbW9lVVdvLVBIb2UtNXlMcW5jaE9fZ05SYnl0Y0pzajRhYjRWcmxPdVplOVVaU2tF0gFkQVVfeXFMUHNTNzl3ckhDOHBBTUdsUWs5M2MwUEt4WkM0bnFkd1c1Snd2dHJudDgxd3YyOVMzanNDU21oUDc4dFQxRjJoMzBvVW1zeHRRT3EzVjFOc3ZOVlF6Vjlqd3cyMkRPdA?oc=5&hl=en-US&gl=US&ceid=US%3Aen",
+    "https://news.google.com/rss/articles/CBMiU0FVX3lxTE8tQzNPNEJiOW1OMm5RUER0VFcycHVwQ2NoNXAtX281ODdfVXRUODhCaFpnSEY5eEQzQnV1R2JER0FQNngwOGRWblZhOFRBZzZWcV9v?oc=5&hl=en-US&gl=US&ceid=US%3Aen",
+    "https://www.tradingview.com/news/gelonghui:da1c04fb3acdf:0",
+    "https://inews.hket.com/article/3719684/%E6%B8%AF%E9%90%B566%E6%A5%AD%E7%B8%BE%EF%BD%9C%E6%B8%AF%E9%90%B5%E5%85%A8%E5%B9%B4%E5%B0%91%E8%B3%BA%E8%BF%9121-%E3%80%80%E6%B4%BE%E6%9C%AB%E6%9C%9F%E6%81%AF0.89%E5%85%83%E4%B8%8D%E8%AE%8A%E3%80%81%E8%82%A1%E6%81%AF%E7%8E%875.2%E5%8E%98%E3%80%80%E7%B8%BE%E5%BE%8C%E5%8D%870.6-",
+    "https://www.tradingview.com/news/gelonghui:a8f0cfd12acdf:0",
+    "https://hk.finance.yahoo.com/news/%E7%BE%8E%E5%9C%8B%E5%A4%B1%E6%A5%AD%E7%8E%87%E9%81%94%E5%88%B02022%E5%B9%B4%E4%BB%A5%E4%BE%86%E6%9C%80%E9%AB%98-%E4%BD%86%E8%83%8C%E5%BE%8C%E4%B8%8D%E5%85%A8%E6%98%AF%E5%A3%9E%E6%B6%88%E6%81%AF-181252887.html",
+    "https://www.tradingview.com/news/gelonghui:90c864bafacdf:0",
+    "https://www.hk01.com/%E8%B2%A1%E7%B6%93%E5%BF%AB%E8%A8%8A/998572/%E6%98%AF%E6%99%82%E5%80%99%E5%85%8C%E6%8F%9B%E6%97%A5%E5%85%83%E4%BA%86-%E6%97%A5%E6%9C%AC%E5%A4%AE%E8%A1%8C%E5%82%B3%E5%9C%A8%E6%9C%AC%E6%9C%88%E7%B5%82%E7%B5%90%E8%B2%A0%E5%88%A9%E7%8E%87%E6%94%BF%E7%AD%96",
+    "https://www.hkej.com/instantnews/international/article/3701717/%25E9%25AE%2591%25E5%25A8%2581%25E7%2588%25BE-%25E8%2581%25AF%25E5%2584%25B2%25E5%25B1%2580%25E6%25B8%259B%25E6%2581%25AF%25E5%25A4%25AA%25E9%2581%25B2%25E6%2598%258E%25E9%25A1%25AF%25E6%259C%2589%25E9%25A2%25A8%25E9%259A%25AA",
+    "https://www.bbc.com/zhongwen/trad/chinese-news-68509844",
+    "https://news.google.com/rss/articles/CBMigAFBVV95cUxOR2VPaks5czhVSHZZQWIzRXNJWVFXRGtaMXhFUG5PbHRvNE5GdVUyVEk3Uk5WYXUxUnNKejBtRzM3QlBfbVVoS0hzd0lISkp2ei1ISkZUeVJCd21UVTBNdmYxLVNENE9HeEJHT2Y2RmtQSENQLXdEd0lKdFVtaThvYQ?oc=5&hl=en-US&gl=US&ceid=US%3Aen",
+    "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5uVXBtdjM0SlkyM2dCVlBkTnc3SWpZNFdGclBxWWFQSWVNUlJBYXVaRk5LZE9fVkRONkZUVlBfRmZ2eDl1UHV2RWhaVkhjUFA2Uzc0?oc=5&hl=en-US&gl=US&ceid=US%3Aen",
+    "https://news.google.com/rss/articles/CBMi2gJBVV95cUxOQnRGTEliaVNMRVFOb2tsb09MQUtxTmZiU1pHVnlRR2tpVzRXM0JYZVNPUmNxelczU3ZqdnQ5NEVRMHJaZW8yN3RjY3JabGRsNDNoQjQ3bExSUEJhVFVxNmEwLWZYcDd2TDE3NUVPM3Q1UEZHZi05SHUxSnlwbWFwMzMwbFpxcXplSEhlZ1FoeFlMR2F0WEdQNkhWeHl1V20wSFdkUTh4eVdyVkJ3UFFZRGhHVDUwSmI3a3RJMjRGV0trNEp0LTFWZVBnWFNsYk5kZ2F6UERDSVN5dXRfdzVidG1PQ2poRGRvTGp0dkRPTHRXTXVvR1ZFTlVfMXR2c2FCMjdlaGpsU21GNVFCWEhnWEhkcmM1ZHZDbmQ4UzZRVEVmbThtYUZGekYwYjZPQTlvaVhNSlpyNXFmbWVtNHN5Ny02d0xfX1JKSDhPRkVHYUQybmd5YlIzUGlB?oc=5&hl=en-US&gl=US&ceid=US%3Aen",
+    "https://www.tkww.hk/epaper/view/newsDetail/1765456582432395264.html",
+    "https://wealth.hket.com/article/3719490/%E6%94%AF%E4%BB%98%E5%AF%B6%E3%80%81%E5%BE%AE%E4%BF%A1%E5%B0%87%E6%8F%90%E9%AB%98%E5%A2%83%E5%A4%96%E7%94%A8%E6%88%B6%E4%BA%A4%E6%98%93%E9%99%90%E9%A1%8D%E3%80%80%E5%96%AE%E7%AD%86%E5%8F%AF%E9%81%945000%E7%BE%8E%E5%85%83%EF%BD%9C%E6%94%AF%E4%BB%98%E5%AF%B6%E8%A9%A6%E9%BB%9E%E3%80%8C%E5%85%8D%E8%BA%AB%E4%BB%BD%E8%AA%8D%E8%AD%89%E3%80%8D%E6%94%AF%E4%BB%98",
+    "https://inews.hket.com/article/3719934/%E5%88%86%E6%9E%90%EF%BD%9C%E6%97%A5%E6%9C%AC%E7%B5%90%E6%9D%9F%E8%B2%A0%E5%88%A9%E7%8E%87%E5%B0%8D%E6%B8%AF%E8%82%A1%E6%9C%89%E4%BD%95%E5%BD%B1%E9%9F%BF%EF%BC%9F",
+    "https://www.ebc.com/zh/jinrong/32559.html",
+    "https://www.tencent.com/zh-hk/articles/2201793.html",
+    "https://www.hkej.com/instantnews/china/article/3699980/-%25E5%2585%25A9%25E6%259C%2583-%25E5%2590%25B3%25E6%25B8%2585-%25E5%25A2%259E%25E5%25BC%25B7%25E6%258A%2595%25E8%25B3%2587%25E8%2580%2585%25E5%25B0%258D%25E5%25B8%2582%25E5%25A0%25B4%25E4%25BF%25A1%25E5%25BF%2583-%25E5%2590%25B8%25E5%25BC%2595%25E6%259B%25B4%25E5%25A4%259A%25E8%25B3%2587%25E9%2587%2591",
+    "https://www.sinotrade.com.tw/richclub/hotstock/-%E7%BE%8E%E8%82%A1%E7%9B%A4%E5%89%8D-%E9%AE%91%E5%A8%81%E7%88%BE%E4%BB%8A%E6%99%9A%E5%87%BA%E5%B8%AD%E5%9C%8B%E6%9C%83%E8%81%BD%E8%AD%89%E6%9C%83--CrowdStrike%E5%AD%A3%E5%A0%B1%E4%BA%AE%E7%9C%BC-%E6%98%A8%E6%97%A5%E7%9B%A4%E5%BE%8C%E9%A3%86%E6%BC%B223-78---65e82d90913d7137b42ded9d",
+    "https://fr.tradingview.com/news/gelonghui%3A005d23088acdf%3A0",
+    "https://www.tkww.hk/epaper/view/newsDetail/1765094054791614464.html",
+    "https://news.google.com/rss/articles/CBMi1ANBVV95cUxQcWRSSUhBZXlmZndLS2ExOG1FODVKenlpNUc4VXFzbkgxcTZkM25ZWFd3NWVLVGg5ck9UZm84aXVWUmNIQTBHWG1pTGJHQldFRUFqVU5VMVIzRm5yRHQwMmwzRkY2UTM3cGptQjEtUjluclhPOEYyak91R09IaDVPbXpCWFV6VjE5bTlCaGpSMkZQNk1LekNjbVNxb3lwVDR3Q1k1Z3Fpa3ZxU21GQzN5dDVWVE14TXpPY3JsVTZMYUVsSTR0ZGRqVW1KNUpMNDNtMm9qa3ppS295enNsYTZXTndYX2kwQWlfTS05Q3JkSkhfSFI3VEtmdW4wOWJsdWo5ajBhbXMxeVF2QnZ6UTdBLU5TeGVzTlVzYjJDbnFfekZSbG9CWUZmUU1WM0hNZEVDNTEtSjR3aTFDT1hFd1hhTmhGbFp5ZEtxX0RCc0pOcE15a1N5Z1dRMTJYeTRPcm1kU0Rxa3pGN21VbVA5SGt0THJLX3pwWk9aTzhNendWcDVlOTNOR1I0Q2g4eVZYZkhPbE52OGYwNWJ2TEVUQ1plYV9NVGM5bG9ZNzFOaUlBTXZnU3lzUnZxU3NxNHlUNGZOWHNEUGxqajNodTZobkdDUGFnU2o?oc=5&hl=en-US&gl=US&ceid=US%3Aen",
+    "https://www.exmoo.com/article/231191.html",
+    "https://www.hkej.com/dailynews/investment/article/3696617/%25E7%25BE%258E%25E5%259C%2598%25E5%258D%259A%25E8%25A3%259C%25E5%259B%259E%25E4%25B8%258B%25E8%25B7%258C%25E8%25A3%2582%25E5%258F%25A3",
+    "https://finance.mingpao.com/fin/daily/20240304/1709485254222/%E7%91%9E%E8%81%AFcarlos-casanova-%E6%95%91%E5%B8%82%E5%8A%9B%E5%BA%A6%E4%B8%8D%E8%B6%B3-%E6%A8%93%E5%83%B9%E6%9C%AA%E4%BE%86%E5%B9%BE%E5%B9%B4%E5%8F%97%E5%A3%93",
+    "https://www.exmoo.com/article/231329.html"
+  ],
+  "analysis": {
+    "direction_probs": {
+      "bull": 0.35,
+      "bear": 0.35,
+      "range": 0.3
+    },
+    "volatility_probs": {
+      "low_vol": 0.2,
+      "medium_vol": 0.55,
+      "high_vol": 0.25
+    },
+    "strategy_background": "基于新闻分析，市场受多重因素影响，预计下周HSI区间震荡，波动性中等。策略上采取事件驱动和均值回归，关注政策消息和资金流向变化。",
+    "key_drivers": [
+      "美联储降息预期支撑风险资产",
+      "中国政策支持与资金流入预期",
+      "地缘政治紧张（如俄乌冲突和科技脱钩）",
+      "科技股表现受Nvidia和台积电影响"
+    ],
+    "main_risks": [
+      "地缘政治升级加剧市场不确定性",
+      "香港国安法立法进程引发投资者担忧",
+      "中国经济数据或政策执行不及预期",
+      "全球央行政策意外变动（如日本央行结束负利率）"
+    ],
+    "scenario": "bear_medianvol"
+  },
+  "elapsed_sec": 270.543,
+  "created_at": 1774530728.2181494,
+  "meta": {
+    "model_name": "deepseek-reasoner",
+    "candidate_limit": 250,
+    "max_pick_for_fulltext": 35,
+    "keyword": null
+  }
+}

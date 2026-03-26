@@ -1,0 +1,190 @@
+2026-03-26 20:29:17,391 | INFO | RUN START | run_id=weekly_timeline_20260326_122917_431dd2 | start_date=2024-01-01 | end_date=2024-12-31 | model_name=deepseek-reasoner | account_value=1000000.00 | risk_pct=0.0100 | save_db=True
+2026-03-26 20:29:24,164 | INFO | Weekly windows built | n_windows=52
+2026-03-26 20:29:24,189 | INFO | [01/52] WEEK START | decision_date=2024-01-07 | entry_date=2024-01-08 | exit_date=2024-01-12 | cumulative_offset_before=0.00
+2026-03-26 20:29:24,191 | INFO | WEEKLY PIPELINE START | week_start=2024-01-01 | week_end=2024-01-07 | candidate_limit=250 | max_pick_for_fulltext=35 | model=deepseek-reasoner
+2026-03-26 20:29:24,234 | INFO | candidates fetched=169
+2026-03-26 20:29:25,326 | INFO | llm selected count=0
+2026-03-26 20:29:25,326 | WARNING | [2024-01-07] news_result not ok | status=llm_selected_none | week_start=2024-01-01 | week_end=2024-01-07
+2026-03-26 20:29:25,326 | INFO | [02/52] WEEK START | decision_date=2024-01-14 | entry_date=2024-01-15 | exit_date=2024-01-19 | cumulative_offset_before=0.00
+2026-03-26 20:29:25,326 | INFO | WEEKLY PIPELINE START | week_start=2024-01-08 | week_end=2024-01-14 | candidate_limit=250 | max_pick_for_fulltext=35 | model=deepseek-reasoner
+2026-03-26 20:29:25,361 | INFO | candidates fetched=185
+2026-03-26 20:31:20,083 | INFO | llm selected count=28
+2026-03-26 20:31:48,986 | INFO | selected fulltext saved to db | rows=28
+2026-03-26 20:32:29,128 | INFO | WEEKLY PIPELINE END | status=ok | selected=28 | scenario=bear_medianvol | elapsed=183.803s
+2026-03-26 20:32:36,291 | INFO | [2024-01-14] WEEK BACKTEST DONE | scenario=bear_medianvol | cum_pnl=-850.0 | return_pct=-0.00085 | sharpe=-5.577664067995282 | max_dd=-0.0010998350247463096 | elapsed_cum=198.90s
+2026-03-26 20:32:36,321 | INFO | [03/52] WEEK START | decision_date=2024-01-21 | entry_date=2024-01-22 | exit_date=2024-01-26 | cumulative_offset_before=-850.00
+2026-03-26 20:32:36,322 | INFO | WEEKLY PIPELINE START | week_start=2024-01-15 | week_end=2024-01-21 | candidate_limit=250 | max_pick_for_fulltext=35 | model=deepseek-reasoner
+2026-03-26 20:32:36,345 | INFO | candidates fetched=177
+2026-03-26 20:35:42,774 | INFO | llm selected count=35
+2026-03-26 20:36:14,149 | INFO | selected fulltext saved to db | rows=35
+2026-03-26 20:36:54,598 | INFO | WEEKLY PIPELINE END | status=ok | selected=35 | scenario=bear_highvol | elapsed=258.279s
+2026-03-26 20:36:58,531 | INFO | [2024-01-21] WEEK BACKTEST DONE | scenario=bear_highvol | cum_pnl=250.0 | return_pct=0.00025 | sharpe=1.10487063615305 | max_dd=-0.0010985170020472168 | elapsed_cum=461.14s
+2026-03-26 20:36:58,561 | INFO | [04/52] WEEK START | decision_date=2024-01-28 | entry_date=2024-01-29 | exit_date=2024-02-02 | cumulative_offset_before=-600.00
+2026-03-26 20:36:58,562 | INFO | WEEKLY PIPELINE START | week_start=2024-01-22 | week_end=2024-01-28 | candidate_limit=250 | max_pick_for_fulltext=35 | model=deepseek-reasoner
+2026-03-26 20:36:58,591 | INFO | candidates fetched=214
+2026-03-26 20:40:31,534 | INFO | llm selected count=34
+2026-03-26 20:41:15,451 | INFO | selected fulltext saved to db | rows=34
+2026-03-26 20:41:58,392 | INFO | WEEKLY PIPELINE END | status=ok | selected=34 | scenario=bull_highvol | elapsed=299.831s
+2026-03-26 20:42:05,240 | INFO | [2024-01-28] WEEK BACKTEST DONE | scenario=bull_highvol | cum_pnl=-3700.0 | return_pct=-0.0037 | sharpe=-12.883724798638212 | max_dd=-0.003849422586612028 | elapsed_cum=767.85s
+2026-03-26 20:42:05,267 | INFO | [05/52] WEEK START | decision_date=2024-02-04 | entry_date=2024-02-05 | exit_date=2024-02-09 | cumulative_offset_before=-4300.00
+2026-03-26 20:42:05,267 | INFO | WEEKLY PIPELINE START | week_start=2024-01-29 | week_end=2024-02-04 | candidate_limit=250 | max_pick_for_fulltext=35 | model=deepseek-reasoner
+2026-03-26 20:42:05,296 | INFO | candidates fetched=235
+2026-03-26 20:45:11,428 | INFO | llm selected count=35
+2026-03-26 20:45:36,668 | INFO | selected fulltext saved to db | rows=35
+2026-03-26 20:46:26,668 | INFO | WEEKLY PIPELINE END | status=ok | selected=35 | scenario=bear_highvol | elapsed=261.398s
+2026-03-26 20:46:31,948 | INFO | [2024-02-04] WEEK BACKTEST DONE | scenario=bear_highvol | cum_pnl=400.0 | return_pct=0.0004 | sharpe=1.876848152964169 | max_dd=-0.0008989212944466862 | elapsed_cum=1034.56s
+2026-03-26 20:46:31,977 | INFO | [06/52] WEEK START | decision_date=2024-02-11 | entry_date=2024-02-12 | exit_date=2024-02-16 | cumulative_offset_before=-3900.00
+2026-03-26 20:46:31,978 | INFO | WEEKLY PIPELINE START | week_start=2024-02-05 | week_end=2024-02-11 | candidate_limit=250 | max_pick_for_fulltext=35 | model=deepseek-reasoner
+2026-03-26 20:46:32,005 | INFO | candidates fetched=171
+2026-03-26 20:49:52,489 | INFO | llm selected count=35
+2026-03-26 20:50:24,472 | INFO | selected fulltext saved to db | rows=35
+2026-03-26 20:51:30,699 | INFO | WEEKLY PIPELINE END | status=ok | selected=35 | scenario=bull_medianvol | elapsed=298.723s
+2026-03-26 20:51:34,949 | INFO | [2024-02-11] WEEK BACKTEST DONE | scenario=bull_medianvol | cum_pnl=2850.0 | return_pct=0.00285 | sharpe=16.34687731027002 | max_dd=0.0 | elapsed_cum=1337.56s
+2026-03-26 20:51:34,984 | INFO | [07/52] WEEK START | decision_date=2024-02-18 | entry_date=2024-02-19 | exit_date=2024-02-23 | cumulative_offset_before=-1050.00
+2026-03-26 20:51:34,984 | INFO | WEEKLY PIPELINE START | week_start=2024-02-12 | week_end=2024-02-18 | candidate_limit=250 | max_pick_for_fulltext=35 | model=deepseek-reasoner
+2026-03-26 20:51:35,010 | INFO | candidates fetched=159
+2026-03-26 20:56:18,588 | INFO | llm selected count=32
+2026-03-26 20:56:57,277 | INFO | selected fulltext saved to db | rows=32
+2026-03-26 20:57:51,560 | INFO | WEEKLY PIPELINE END | status=ok | selected=32 | scenario=range_highvol | elapsed=376.577s
+2026-03-26 20:57:56,860 | INFO | [2024-02-18] WEEK BACKTEST DONE | scenario=range_highvol | cum_pnl=-1300.0 | return_pct=-0.0013 | sharpe=-6.287414405725808 | max_dd=-0.0015496125968508245 | elapsed_cum=1719.47s
+2026-03-26 20:57:56,900 | INFO | [08/52] WEEK START | decision_date=2024-02-25 | entry_date=2024-02-26 | exit_date=2024-03-01 | cumulative_offset_before=-2350.00
+2026-03-26 20:57:56,900 | INFO | WEEKLY PIPELINE START | week_start=2024-02-19 | week_end=2024-02-25 | candidate_limit=250 | max_pick_for_fulltext=35 | model=deepseek-reasoner
+2026-03-26 20:57:56,946 | INFO | candidates fetched=246
+2026-03-26 21:01:18,665 | INFO | llm selected count=35
+2026-03-26 21:02:07,314 | INFO | selected fulltext saved to db | rows=35
+2026-03-26 21:02:54,331 | INFO | WEEKLY PIPELINE END | status=ok | selected=35 | scenario=bull_medianvol | elapsed=297.425s
+2026-03-26 21:02:59,575 | INFO | [2024-02-25] WEEK BACKTEST DONE | scenario=bull_medianvol | cum_pnl=1150.0 | return_pct=0.00115 | sharpe=4.634844443730953 | max_dd=-0.0009989511013436259 | elapsed_cum=2022.18s
+2026-03-26 21:02:59,623 | INFO | [09/52] WEEK START | decision_date=2024-03-03 | entry_date=2024-03-04 | exit_date=2024-03-08 | cumulative_offset_before=-1200.00
+2026-03-26 21:02:59,624 | INFO | WEEKLY PIPELINE START | week_start=2024-02-26 | week_end=2024-03-03 | candidate_limit=250 | max_pick_for_fulltext=35 | model=deepseek-reasoner
+2026-03-26 21:02:59,661 | INFO | candidates fetched=226
+2026-03-26 21:06:07,026 | INFO | llm selected count=35
+2026-03-26 21:06:36,040 | INFO | selected fulltext saved to db | rows=35
+2026-03-26 21:07:32,838 | INFO | WEEKLY PIPELINE END | status=ok | selected=35 | scenario=bull_medianvol | elapsed=273.214s
+2026-03-26 21:07:37,644 | INFO | [2024-03-03] WEEK BACKTEST DONE | scenario=bull_medianvol | cum_pnl=-150.0 | return_pct=-0.00015 | sharpe=-0.2891179414999473 | max_dd=-0.0022499999999999742 | elapsed_cum=2300.25s
+2026-03-26 21:07:37,672 | INFO | [10/52] WEEK START | decision_date=2024-03-10 | entry_date=2024-03-11 | exit_date=2024-03-15 | cumulative_offset_before=-1350.00
+2026-03-26 21:07:37,672 | INFO | WEEKLY PIPELINE START | week_start=2024-03-04 | week_end=2024-03-10 | candidate_limit=250 | max_pick_for_fulltext=35 | model=deepseek-reasoner
+2026-03-26 21:07:37,710 | INFO | candidates fetched=208
+2026-03-26 21:11:04,168 | INFO | llm selected count=35
+2026-03-26 21:11:21,949 | INFO | selected fulltext saved to db | rows=35
+2026-03-26 21:12:08,218 | INFO | WEEKLY PIPELINE END | status=ok | selected=35 | scenario=bear_medianvol | elapsed=270.543s
+2026-03-26 21:12:12,667 | INFO | [2024-03-10] WEEK BACKTEST DONE | scenario=bear_medianvol | cum_pnl=-2000.0 | return_pct=-0.002 | sharpe=-4.642199968994553 | max_dd=-0.003149999999999986 | elapsed_cum=2575.28s
+2026-03-26 21:12:12,702 | INFO | [11/52] WEEK START | decision_date=2024-03-17 | entry_date=2024-03-18 | exit_date=2024-03-22 | cumulative_offset_before=-3350.00
+2026-03-26 21:12:12,702 | INFO | WEEKLY PIPELINE START | week_start=2024-03-11 | week_end=2024-03-17 | candidate_limit=250 | max_pick_for_fulltext=35 | model=deepseek-reasoner
+2026-03-26 21:12:12,730 | INFO | candidates fetched=205
+2026-03-26 21:15:55,471 | INFO | llm selected count=33
+2026-03-26 21:16:16,467 | INFO | selected fulltext saved to db | rows=33
+2026-03-26 21:17:12,604 | INFO | WEEKLY PIPELINE END | status=ok | selected=33 | scenario=bull_medianvol | elapsed=299.902s
+2026-03-26 21:17:16,600 | INFO | [2024-03-17] WEEK BACKTEST DONE | scenario=bull_medianvol | cum_pnl=-2400.0 | return_pct=-0.0024 | sharpe=-5.755887303127362 | max_dd=-0.0023999999999999577 | elapsed_cum=2879.21s
+2026-03-26 21:17:16,642 | INFO | [12/52] WEEK START | decision_date=2024-03-24 | entry_date=2024-03-25 | exit_date=2024-03-29 | cumulative_offset_before=-5750.00
+2026-03-26 21:17:16,643 | INFO | WEEKLY PIPELINE START | week_start=2024-03-18 | week_end=2024-03-24 | candidate_limit=250 | max_pick_for_fulltext=35 | model=deepseek-reasoner
+2026-03-26 21:17:16,665 | INFO | candidates fetched=201
+2026-03-26 21:22:10,874 | INFO | llm selected count=35
+2026-03-26 21:22:31,382 | INFO | selected fulltext saved to db | rows=35
+2026-03-26 21:23:19,687 | INFO | WEEKLY PIPELINE END | status=ok | selected=35 | scenario=bull_medianvol | elapsed=363.046s
+2026-03-26 21:23:24,145 | INFO | [2024-03-24] WEEK BACKTEST DONE | scenario=bull_medianvol | cum_pnl=-2100.0 | return_pct=-0.0021 | sharpe=-5.988700616321869 | max_dd=-0.0022499999999999742 | elapsed_cum=3246.76s
+2026-03-26 21:23:24,184 | INFO | [13/52] WEEK START | decision_date=2024-03-31 | entry_date=2024-04-01 | exit_date=2024-04-05 | cumulative_offset_before=-7850.00
+2026-03-26 21:23:24,185 | INFO | WEEKLY PIPELINE START | week_start=2024-03-25 | week_end=2024-03-31 | candidate_limit=250 | max_pick_for_fulltext=35 | model=deepseek-reasoner
+2026-03-26 21:23:24,216 | INFO | candidates fetched=193
+2026-03-26 21:26:05,895 | INFO | llm selected count=35
+2026-03-26 21:26:52,906 | INFO | selected fulltext saved to db | rows=35
+2026-03-26 21:27:38,743 | INFO | WEEKLY PIPELINE END | status=ok | selected=35 | scenario=bear_medianvol | elapsed=254.559s
+2026-03-26 21:27:44,603 | INFO | [2024-03-31] WEEK BACKTEST DONE | scenario=bear_medianvol | cum_pnl=-800.0 | return_pct=-0.0008 | sharpe=-9.21728803498999 | max_dd=-0.0008999100089991385 | elapsed_cum=3507.22s
+2026-03-26 21:27:44,642 | INFO | [14/52] WEEK START | decision_date=2024-04-07 | entry_date=2024-04-08 | exit_date=2024-04-12 | cumulative_offset_before=-8650.00
+2026-03-26 21:27:44,642 | INFO | WEEKLY PIPELINE START | week_start=2024-04-01 | week_end=2024-04-07 | candidate_limit=250 | max_pick_for_fulltext=35 | model=deepseek-reasoner
+2026-03-26 21:27:44,678 | INFO | candidates fetched=163
+2026-03-26 21:27:45,323 | INFO | llm selected count=0
+2026-03-26 21:27:45,323 | WARNING | [2024-04-07] news_result not ok | status=llm_selected_none | week_start=2024-04-01 | week_end=2024-04-07
+2026-03-26 21:27:45,323 | INFO | [15/52] WEEK START | decision_date=2024-04-14 | entry_date=2024-04-15 | exit_date=2024-04-19 | cumulative_offset_before=-8650.00
+2026-03-26 21:27:45,323 | INFO | WEEKLY PIPELINE START | week_start=2024-04-08 | week_end=2024-04-14 | candidate_limit=250 | max_pick_for_fulltext=35 | model=deepseek-reasoner
+2026-03-26 21:27:45,354 | INFO | candidates fetched=203
+2026-03-26 21:31:14,156 | INFO | llm selected count=35
+2026-03-26 21:31:32,773 | INFO | selected fulltext saved to db | rows=35
+2026-03-26 21:32:39,051 | INFO | WEEKLY PIPELINE END | status=ok | selected=35 | scenario=bear_medianvol | elapsed=293.725s
+2026-03-26 21:32:44,068 | INFO | [2024-04-14] WEEK BACKTEST DONE | scenario=bear_medianvol | cum_pnl=-750.0 | return_pct=-0.00075 | sharpe=-2.0722405833561046 | max_dd=-0.0023999999999999577 | elapsed_cum=3806.68s
+2026-03-26 21:32:44,129 | INFO | [16/52] WEEK START | decision_date=2024-04-21 | entry_date=2024-04-22 | exit_date=2024-04-26 | cumulative_offset_before=-9400.00
+2026-03-26 21:32:44,129 | INFO | WEEKLY PIPELINE START | week_start=2024-04-15 | week_end=2024-04-21 | candidate_limit=250 | max_pick_for_fulltext=35 | model=deepseek-reasoner
+2026-03-26 21:32:44,183 | INFO | candidates fetched=200
+2026-03-26 21:36:22,322 | INFO | llm selected count=35
+2026-03-26 21:36:39,406 | INFO | selected fulltext saved to db | rows=35
+2026-03-26 21:37:34,695 | INFO | WEEKLY PIPELINE END | status=ok | selected=35 | scenario=range_highvol | elapsed=290.565s
+2026-03-26 21:37:39,959 | INFO | [2024-04-21] WEEK BACKTEST DONE | scenario=range_highvol | cum_pnl=-4150.0 | return_pct=-0.00415 | sharpe=-20.75080773110676 | max_dd=-0.004149999999999987 | elapsed_cum=4102.57s
+2026-03-26 21:37:39,999 | INFO | [17/52] WEEK START | decision_date=2024-04-28 | entry_date=2024-04-29 | exit_date=2024-05-03 | cumulative_offset_before=-13550.00
+2026-03-26 21:37:39,999 | INFO | WEEKLY PIPELINE START | week_start=2024-04-22 | week_end=2024-04-28 | candidate_limit=250 | max_pick_for_fulltext=35 | model=deepseek-reasoner
+2026-03-26 21:37:40,026 | INFO | candidates fetched=193
+2026-03-26 21:39:38,676 | INFO | llm selected count=30
+2026-03-26 21:39:54,664 | INFO | selected fulltext saved to db | rows=30
+2026-03-26 21:40:47,250 | INFO | WEEKLY PIPELINE END | status=ok | selected=30 | scenario=bull_medianvol | elapsed=187.251s
+2026-03-26 21:40:53,971 | INFO | [2024-04-28] WEEK BACKTEST DONE | scenario=bull_medianvol | cum_pnl=800.0 | return_pct=0.0008 | sharpe=2.1756535932737333 | max_dd=-0.0009000000000000119 | elapsed_cum=4296.58s
+2026-03-26 21:40:54,007 | INFO | [18/52] WEEK START | decision_date=2024-05-05 | entry_date=2024-05-06 | exit_date=2024-05-10 | cumulative_offset_before=-12750.00
+2026-03-26 21:40:54,008 | INFO | WEEKLY PIPELINE START | week_start=2024-04-29 | week_end=2024-05-05 | candidate_limit=250 | max_pick_for_fulltext=35 | model=deepseek-reasoner
+2026-03-26 21:40:54,041 | INFO | candidates fetched=191
+2026-03-26 21:42:46,528 | INFO | llm selected count=33
+2026-03-26 21:43:05,091 | INFO | selected fulltext saved to db | rows=33
+2026-03-26 21:44:03,586 | INFO | WEEKLY PIPELINE END | status=ok | selected=33 | scenario=bull_medianvol | elapsed=189.577s
+2026-03-26 21:44:07,691 | INFO | [2024-05-05] WEEK BACKTEST DONE | scenario=bull_medianvol | cum_pnl=100.0 | return_pct=0.0001 | sharpe=0.15239143148274817 | max_dd=-0.0039000000000000146 | elapsed_cum=4490.30s
+2026-03-26 21:44:07,711 | INFO | [19/52] WEEK START | decision_date=2024-05-12 | entry_date=2024-05-13 | exit_date=2024-05-17 | cumulative_offset_before=-12650.00
+2026-03-26 21:44:07,711 | INFO | WEEKLY PIPELINE START | week_start=2024-05-06 | week_end=2024-05-12 | candidate_limit=250 | max_pick_for_fulltext=35 | model=deepseek-reasoner
+2026-03-26 21:44:07,740 | INFO | candidates fetched=208
+2026-03-26 21:48:00,276 | INFO | llm selected count=30
+2026-03-26 21:48:40,362 | INFO | selected fulltext saved to db | rows=30
+2026-03-26 21:49:18,555 | INFO | WEEKLY PIPELINE END | status=ok | selected=30 | scenario=bull_medianvol | elapsed=310.845s
+2026-03-26 21:49:24,676 | INFO | [2024-05-12] WEEK BACKTEST DONE | scenario=bull_medianvol | cum_pnl=800.0 | return_pct=0.0008 | sharpe=1.7718380069547532 | max_dd=-0.0016000000000000458 | elapsed_cum=4807.29s
+2026-03-26 21:49:24,721 | INFO | [20/52] WEEK START | decision_date=2024-05-19 | entry_date=2024-05-20 | exit_date=2024-05-24 | cumulative_offset_before=-11850.00
+2026-03-26 21:49:24,722 | INFO | WEEKLY PIPELINE START | week_start=2024-05-13 | week_end=2024-05-19 | candidate_limit=250 | max_pick_for_fulltext=35 | model=deepseek-reasoner
+2026-03-26 21:49:24,804 | INFO | candidates fetched=207
+2026-03-26 21:51:00,383 | INFO | llm selected count=34
+2026-03-26 21:51:39,440 | INFO | selected fulltext saved to db | rows=34
+2026-03-26 21:52:20,386 | INFO | WEEKLY PIPELINE END | status=ok | selected=34 | scenario=bull_medianvol | elapsed=175.664s
+2026-03-26 21:52:25,836 | INFO | [2024-05-19] WEEK BACKTEST DONE | scenario=bull_medianvol | cum_pnl=-8450.0 | return_pct=-0.00845 | sharpe=-14.957003884433327 | max_dd=-0.008449999999999958 | elapsed_cum=4988.45s
+2026-03-26 21:52:25,883 | INFO | [21/52] WEEK START | decision_date=2024-05-26 | entry_date=2024-05-27 | exit_date=2024-05-31 | cumulative_offset_before=-20300.00
+2026-03-26 21:52:25,883 | INFO | WEEKLY PIPELINE START | week_start=2024-05-20 | week_end=2024-05-26 | candidate_limit=250 | max_pick_for_fulltext=35 | model=deepseek-reasoner
+2026-03-26 21:52:25,927 | INFO | candidates fetched=203
+2026-03-26 21:54:50,007 | INFO | llm selected count=35
+2026-03-26 21:55:09,264 | INFO | selected fulltext saved to db | rows=35
+2026-03-26 21:56:02,951 | INFO | WEEKLY PIPELINE END | status=ok | selected=35 | scenario=bear_medianvol | elapsed=217.070s
+2026-03-26 21:56:07,526 | INFO | [2024-05-26] WEEK BACKTEST DONE | scenario=bear_medianvol | cum_pnl=-3400.0 | return_pct=-0.0034 | sharpe=-13.434272748967299 | max_dd=-0.0033999999999999586 | elapsed_cum=5210.14s
+2026-03-26 21:56:07,569 | INFO | [22/52] WEEK START | decision_date=2024-06-02 | entry_date=2024-06-03 | exit_date=2024-06-07 | cumulative_offset_before=-23700.00
+2026-03-26 21:56:07,570 | INFO | WEEKLY PIPELINE START | week_start=2024-05-27 | week_end=2024-06-02 | candidate_limit=250 | max_pick_for_fulltext=35 | model=deepseek-reasoner
+2026-03-26 21:56:07,603 | INFO | candidates fetched=213
+2026-03-26 21:59:35,887 | INFO | llm selected count=35
+2026-03-26 21:59:56,567 | INFO | selected fulltext saved to db | rows=35
+2026-03-26 22:00:51,149 | INFO | WEEKLY PIPELINE END | status=ok | selected=35 | scenario=range_medianvol | elapsed=283.578s
+2026-03-26 22:00:55,675 | INFO | [2024-06-02] WEEK BACKTEST DONE | scenario=range_medianvol | cum_pnl=-2550.0 | return_pct=-0.00255 | sharpe=-6.647673458642244 | max_dd=-0.002650000000000041 | elapsed_cum=5498.29s
+2026-03-26 22:00:55,721 | INFO | [23/52] WEEK START | decision_date=2024-06-09 | entry_date=2024-06-10 | exit_date=2024-06-14 | cumulative_offset_before=-26250.00
+2026-03-26 22:00:55,721 | INFO | WEEKLY PIPELINE START | week_start=2024-06-03 | week_end=2024-06-09 | candidate_limit=250 | max_pick_for_fulltext=35 | model=deepseek-reasoner
+2026-03-26 22:00:55,761 | INFO | candidates fetched=207
+2026-03-26 22:04:00,592 | INFO | llm selected count=21
+2026-03-26 22:04:11,685 | INFO | selected fulltext saved to db | rows=21
+2026-03-26 22:05:14,114 | INFO | WEEKLY PIPELINE END | status=ok | selected=21 | scenario=range_medianvol | elapsed=258.393s
+2026-03-26 22:05:18,841 | INFO | [2024-06-09] WEEK BACKTEST DONE | scenario=range_medianvol | cum_pnl=-700.0 | return_pct=-0.0007 | sharpe=-2.92103162266757 | max_dd=-0.0015985612948345995 | elapsed_cum=5761.45s
+2026-03-26 22:05:18,886 | INFO | [24/52] WEEK START | decision_date=2024-06-16 | entry_date=2024-06-17 | exit_date=2024-06-21 | cumulative_offset_before=-26950.00
+2026-03-26 22:05:18,887 | INFO | WEEKLY PIPELINE START | week_start=2024-06-10 | week_end=2024-06-16 | candidate_limit=250 | max_pick_for_fulltext=35 | model=deepseek-reasoner
+2026-03-26 22:05:18,917 | INFO | candidates fetched=213
+2026-03-26 22:09:24,540 | INFO | llm selected count=34
+2026-03-26 22:09:46,255 | INFO | selected fulltext saved to db | rows=34
+2026-03-26 22:10:23,160 | INFO | WEEKLY PIPELINE END | status=ok | selected=34 | scenario=bear_medianvol | elapsed=304.273s
+2026-03-26 22:10:31,024 | INFO | [2024-06-16] WEEK BACKTEST DONE | scenario=bear_medianvol | cum_pnl=-5500.0 | return_pct=-0.0055 | sharpe=-7.915411361625151 | max_dd=-0.005700000000000038 | elapsed_cum=6073.63s
+2026-03-26 22:10:31,083 | INFO | [25/52] WEEK START | decision_date=2024-06-23 | entry_date=2024-06-24 | exit_date=2024-06-28 | cumulative_offset_before=-32450.00
+2026-03-26 22:10:31,085 | INFO | WEEKLY PIPELINE START | week_start=2024-06-17 | week_end=2024-06-23 | candidate_limit=250 | max_pick_for_fulltext=35 | model=deepseek-reasoner
+2026-03-26 22:10:31,136 | INFO | candidates fetched=242
+2026-03-26 22:12:24,838 | INFO | llm selected count=34
+2026-03-26 22:12:47,700 | INFO | selected fulltext saved to db | rows=34
+2026-03-26 22:13:22,906 | INFO | WEEKLY PIPELINE END | status=ok | selected=34 | scenario=bear_medianvol | elapsed=171.821s
+2026-03-26 22:13:29,721 | INFO | [2024-06-23] WEEK BACKTEST DONE | scenario=bear_medianvol | cum_pnl=1450.0 | return_pct=0.00145 | sharpe=2.558096366771803 | max_dd=-0.0016946618152818838 | elapsed_cum=6252.33s
+2026-03-26 22:13:29,766 | INFO | [26/52] WEEK START | decision_date=2024-06-30 | entry_date=2024-07-01 | exit_date=2024-07-05 | cumulative_offset_before=-31000.00
+2026-03-26 22:13:29,766 | INFO | WEEKLY PIPELINE START | week_start=2024-06-24 | week_end=2024-06-30 | candidate_limit=250 | max_pick_for_fulltext=35 | model=deepseek-reasoner
+2026-03-26 22:13:29,807 | INFO | candidates fetched=250
+2026-03-26 22:16:35,070 | INFO | llm selected count=30
+2026-03-26 22:16:56,262 | INFO | selected fulltext saved to db | rows=30
+2026-03-26 22:17:57,605 | INFO | WEEKLY PIPELINE END | status=ok | selected=30 | scenario=bull_medianvol | elapsed=267.837s
+2026-03-26 22:18:07,192 | INFO | [2024-06-30] WEEK BACKTEST DONE | scenario=bull_medianvol | cum_pnl=850.0 | return_pct=0.00085 | sharpe=1.8787775689283694 | max_dd=-0.0022927777500871827 | elapsed_cum=6529.80s
+2026-03-26 22:18:07,235 | INFO | [27/52] WEEK START | decision_date=2024-07-07 | entry_date=2024-07-08 | exit_date=2024-07-12 | cumulative_offset_before=-30150.00
+2026-03-26 22:18:07,240 | INFO | WEEKLY PIPELINE START | week_start=2024-07-01 | week_end=2024-07-07 | candidate_limit=250 | max_pick_for_fulltext=35 | model=deepseek-reasoner
+2026-03-26 22:18:07,302 | INFO | candidates fetched=195
+2026-03-26 22:21:09,464 | INFO | llm selected count=35
+2026-03-26 22:21:25,359 | INFO | selected fulltext saved to db | rows=35
+2026-03-26 22:22:19,968 | INFO | WEEKLY PIPELINE END | status=ok | selected=35 | scenario=bear_medianvol | elapsed=252.732s
+2026-03-26 22:22:24,059 | INFO | [2024-07-07] WEEK BACKTEST DONE | scenario=bear_medianvol | cum_pnl=-5400.0 | return_pct=-0.0054 | sharpe=-8.474108613313797 | max_dd=-0.005996402158704783 | elapsed_cum=6786.67s
+2026-03-26 22:22:24,091 | INFO | [28/52] WEEK START | decision_date=2024-07-14 | entry_date=2024-07-15 | exit_date=2024-07-19 | cumulative_offset_before=-35550.00
+2026-03-26 22:22:24,096 | INFO | WEEKLY PIPELINE START | week_start=2024-07-08 | week_end=2024-07-14 | candidate_limit=250 | max_pick_for_fulltext=35 | model=deepseek-reasoner
+2026-03-26 22:22:24,124 | INFO | candidates fetched=199

@@ -106,7 +106,7 @@ def prepare_datasets(price_chain_df: pd.DataFrame,
     for col in ["Close", "High", "Low", "Open", "Volume", "Returns"]:
         if col in hsi.columns:
             hsi[col] = pd.to_numeric(hsi[col], errors="coerce")
-            hsi[col] = hsi[col].fillna(method="ffill")
+            hsi[col] = hsi[col].ffill()
 
     hsi = hsi.drop_duplicates(subset=["Date"]).reset_index(drop=True)
     hsi=pd.merge(hsi,future,on="Date",how="left")

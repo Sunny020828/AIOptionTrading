@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 from scipy.stats import norm
-from typing import List, Dict, Any
+from typing import List, Dict, Any, Optional
 
 
 def get_options_for_date(
@@ -618,6 +618,36 @@ def signals_to_position_legs(signals: List[Dict[str, Any]], contract_multiplier:
         })
 
     return legs, meta
+
+
+def extract_meta_from_signals(signals: List[Dict[str, Any]]) -> Optional[Dict[str, Any]]:
+    """
+    `generate_trade_signals()` appends a dict like {"meta": {...}} at the end.
+    This helper extracts and returns that meta.
+    """
+    if not signals:
+        return None
+    for sig in signals:
+        if isinstance(sig, dict) and "meta" in sig:
+            return sig.get("meta")
+    return None
+
+
+def compute_dte_days(expiry: Any, current_date: Any) -> Optional[int]:
+    """
+    Compute days-to-expiry using meta['expiry'] (typically target option ExpDate) and `current_date`.
+    Returns None if either input is invalid.
+    """
+    if expiry is None or current_date is None:
+        return None
+    try:
+        exp = pd.to_datetime(expiry, errors="coerce").normalize()
+        cur = pd.to_datetime(current_date, errors="coerce").normalize()
+        if pd.isna(exp) or pd.isna(cur):
+            return None
+        return int((exp - cur).days)
+    except Exception:
+        return None
 
 
 def mark_signals_to_market(

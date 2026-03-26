@@ -2,6 +2,7 @@ import asyncio
 import json
 import logging
 import os
+import hashlib
 import re
 import time
 import uuid
@@ -13,9 +14,15 @@ from get_news.fetch_fulltext import read as fetch_fulltext
 from utils.chat_completion import THINKING_MODEL, achat_complete
 from db.operations import save_performance_record
 from utils.llm import choose_scenario
-from utils.backtest import compute_backtest_metrics
+from utils.backtest import summarize_mtm_df
 from utils.utils import trim_to_chars
 from utils.data import get_data, prepare_datasets
+from utils.strategy_pools import (
+    generate_trade_signals,
+    mark_signals_to_market,
+    extract_meta_from_signals,
+    compute_dte_days,
+)
 
 import numpy as np
 import pandas as pd
@@ -544,6 +551,54 @@ def get_weekly_windows_from_option_df(
     return windows
 
 
+def _safe_filename_fragment(s: str) -> str:
+    s = s or ""
+    # Keep it filesystem-friendly.
+    s = re.sub(r"[^a-zA-Z0-9_.-]+", "_", s)
+    return s[:120] if s else "all"
+
+
+def _weekly_cache_path(
+    *,
+    cache_dir: str,
+    week_start: str,
+    week_end: str,
+    model_name: str,
+    candidate_limit: int,
+    max_pick_for_fulltext: int,
+    keyword: Optional[str],
+) -> str:
+    kw = _safe_filename_fragment(keyword or "all")
+    model_frag = _safe_filename_fragment(model_name)
+    os.makedirs(cache_dir, exist_ok=True)
+    fname = f"weekly_cache_{week_start}_{week_end}_{model_frag}_cand{candidate_limit}_pick{max_pick_for_fulltext}_kw{kw}.json"
+    # In case filename gets too long, fall back to hash.
+    if len(fname) > 180:
+        raw_key = f"{week_start}|{week_end}|{model_name}|{candidate_limit}|{max_pick_for_fulltext}|{keyword}"
+        h = hashlib.sha256(raw_key.encode("utf-8")).hexdigest()[:16]
+        fname = f"weekly_cache_{h}.json"
+    return os.path.join(cache_dir, fname)
+
+
+def _load_weekly_cache(cache_path: str) -> Optional[Dict[str, Any]]:
+    if not os.path.exists(cache_path):
+        return None
+    try:
+        with open(cache_path, "r", encoding="utf-8") as f:
+            return json.load(f)
+    except Exception:
+        return None
+
+
+def _save_weekly_cache(cache_path: str, payload: Dict[str, Any]) -> None:
+    try:
+        with open(cache_path, "w", encoding="utf-8") as f:
+            json.dump(payload, f, ensure_ascii=False, indent=2)
+    except Exception:
+        # Cache is best-effort; do not break the backtest.
+        pass
+
+
 async def run_full_weekly_timeline(
     start_date: str = "2024-01-01",
     end_date: str = "2024-12-31",
@@ -557,6 +612,8 @@ async def run_full_weekly_timeline(
     keyword: Optional[str] = None,
     save_selected_fulltext_to_db: bool = True,
     max_concurrency: int = 3,
+    use_cached_weekly_analysis: bool = True,
+    cache_dir: str = "./cache/weekly",
 ) -> Dict[str, Any]:
     """
     Weekly full-year backtest:
@@ -604,6 +661,18 @@ async def run_full_weekly_timeline(
         mtm_parts: List[pd.DataFrame] = []
         cumulative_offset = 0.0
 
+        # -----------------------------
+        # Cross-week position state machine
+        # -----------------------------
+        current_scenario: Optional[str] = None
+        current_signals: Optional[List[Dict[str, Any]]] = None
+        current_meta: Optional[Dict[str, Any]] = None
+        current_strategy_type: Optional[str] = None
+        current_block_base_portfolio: float = cumulative_offset  # pnl offset at current block entry
+
+        # Rebalance triggers
+        dte_rebalance_threshold_days = 7
+
         # 3) Weekly loop
         for i, (decision_date, entry_date, exit_date) in enumerate(
             tqdm(windows, desc="Running weekly timeline", total=len(windows)),
@@ -619,19 +688,70 @@ async def run_full_weekly_timeline(
                 cumulative_offset,
             )
 
-            # 3.1) News => scenario
-            news_result = await run_weekly_pipeline(
-                anchor_date=decision_date.to_pydatetime(),
+            # 3.1) News => scenario (cache-aware)
+            news_start, news_end = get_week_window(decision_date.to_pydatetime())
+            decision_date_saved = pd.to_datetime(news_end).normalize()
+            cache_path = _weekly_cache_path(
+                cache_dir=cache_dir,
+                week_start=news_start,
+                week_end=news_end,
+                model_name=model_name,
                 candidate_limit=candidate_limit,
                 max_pick_for_fulltext=max_pick_for_fulltext,
                 keyword=keyword,
-                model_name=model_name,
-                max_concurrency=max_concurrency,
-                save_selected_fulltext_to_db=save_selected_fulltext_to_db,
-                logger=logger,
             )
 
-            if news_result.get("status") != "ok":
+            cached = _load_weekly_cache(cache_path) if use_cached_weekly_analysis else None
+            if cached and isinstance(cached, dict) and cached.get("analysis"):
+                news_result = {
+                    "week_start": news_start,
+                    "week_end": news_end,
+                    "candidate_count": cached.get("candidate_count"),
+                    "selected_count": cached.get("selected_count"),
+                    "selected_urls": cached.get("selected_urls", []),
+                    "analysis": cached["analysis"],
+                    "status": "cached",
+                    "elapsed_sec": cached.get("elapsed_sec"),
+                }
+                logger.info(
+                    "[%s] use cached weekly analysis | week=%s→%s | scenario=%s",
+                    decision_date.date(),
+                    news_start,
+                    news_end,
+                    cached["analysis"].get("scenario"),
+                )
+            else:
+                news_result = await run_weekly_pipeline(
+                    anchor_date=decision_date.to_pydatetime(),
+                    candidate_limit=candidate_limit,
+                    max_pick_for_fulltext=max_pick_for_fulltext,
+                    keyword=keyword,
+                    model_name=model_name,
+                    max_concurrency=max_concurrency,
+                    save_selected_fulltext_to_db=save_selected_fulltext_to_db,
+                    logger=logger,
+                )
+                if news_result.get("status") == "ok" and isinstance(news_result.get("analysis"), dict):
+                    # Save only the minimal part needed for next runs.
+                    analysis = dict(news_result["analysis"])
+                    analysis.pop("raw_llm_text", None)
+                    payload = {
+                        "candidate_count": news_result.get("candidate_count"),
+                        "selected_count": news_result.get("selected_count"),
+                        "selected_urls": news_result.get("selected_urls", [])[:50],
+                        "analysis": analysis,
+                        "elapsed_sec": news_result.get("elapsed_sec"),
+                        "created_at": time.time(),
+                        "meta": {
+                            "model_name": model_name,
+                            "candidate_limit": candidate_limit,
+                            "max_pick_for_fulltext": max_pick_for_fulltext,
+                            "keyword": keyword,
+                        },
+                    }
+                    _save_weekly_cache(cache_path, payload)
+
+            if news_result.get("status") not in {"ok", "cached"}:
                 logger.warning(
                     "[%s] news_result not ok | status=%s | week_start=%s | week_end=%s",
                     decision_date.date(),
@@ -653,54 +773,130 @@ async def run_full_weekly_timeline(
                 logger.warning("[%s] scenario missing, skip backtest.", decision_date.date())
                 continue
 
-            # 3.2) Backtest next week
-            bt = compute_backtest_metrics(
-                scenario=scenario,
-                entry_date=entry_date,
-                exit_date=exit_date,
-                option_df=merged_df,
-                account_value=account_value,
-                risk_pct=risk_pct,
-            )
+            # 3.2) State-machine execution (cross-week dynamic position)
+            need_rebalance = False
+            rebalance_reason: List[str] = []
 
-            metrics = bt["metrics"]
-            mtm_df = bt["mtm_df"]
-            signals = bt["signals"]
-            strategy_type = bt["strategy_type"]
+            if current_signals is None or current_scenario is None:
+                need_rebalance = True
+                rebalance_reason.append("no_position")
+            elif scenario != current_scenario:
+                # Threshold Trigger: only allow reversal with sufficiently high confidence.
+                extreme_threshold = 0.85
+                dir_key = str(scenario).split("_", 1)[0].strip().lower()  # bull / bear / range
+                p_dir = float(direction_probs.get(dir_key, 0.0) or 0.0)
+                if p_dir >= extreme_threshold:
+                    need_rebalance = True
+                    rebalance_reason.append(f"scenario_reversal_p_{dir_key}_ge_{extreme_threshold}")
+                else:
+                    need_rebalance = False
+                    rebalance_reason.append(f"scenario_reversal_blocked_p_{dir_key}={p_dir:.3f}")
+            else:
+                dte_days = compute_dte_days(
+                    (current_meta or {}).get("expiry") if current_meta else None,
+                    entry_date,
+                )
+                if dte_days is not None and dte_days <= dte_rebalance_threshold_days:
+                    need_rebalance = True
+                    rebalance_reason.append(f"dte_le_{dte_rebalance_threshold_days}")
 
-            # 3.3) MTM post-process + accumulate pnl
-            if mtm_df is not None and not mtm_df.empty:
-                mtm_df = mtm_df.copy()
-                mtm_df["decision_date"] = decision_date
-                mtm_df["entry_date"] = entry_date
-                mtm_df["exit_date"] = exit_date
-                mtm_df["scenario"] = scenario
-                mtm_df["strategy_type"] = strategy_type
+            if need_rebalance:
+                new_signals = generate_trade_signals(
+                    scenario=scenario,
+                    date=entry_date,
+                    df=merged_df,
+                    account_value=account_value,
+                    risk_pct=risk_pct,
+                )
+                current_signals = new_signals if new_signals else None
+                current_meta = extract_meta_from_signals(current_signals or [])
+                current_scenario = scenario
+                current_strategy_type = current_meta.get("strategy_type") if current_meta else None
+                # Start a new pnl block at this entry_date.
+                current_block_base_portfolio = cumulative_offset
 
-                prev_offset = cumulative_offset
-                mtm_df["portfolio_total_pnl"] = mtm_df["Total_PnL"] + cumulative_offset
-                cumulative_offset = float(mtm_df["portfolio_total_pnl"].iloc[-1])
-                mtm_parts.append(mtm_df)
                 logger.info(
-                    "[%s] WEEK BACKTEST DONE | scenario=%s | cum_pnl=%s | return_pct=%s | sharpe=%s | max_dd=%s | elapsed_cum=%.2fs",
-                    decision_date.date(),
+                    "[%s] REBALANCE | reasons=%s | scenario=%s | strategy_type=%s",
+                    decision_date_saved.date(),
+                    ",".join(rebalance_reason),
                     scenario,
-                    metrics.get("cum_pnl"),
-                    metrics.get("return_pct"),
-                    metrics.get("sharpe"),
-                    metrics.get("max_drawdown_pct"),
-                    time.perf_counter() - t0,
+                    current_strategy_type,
+                )
+
+            # 3.3) Week MTM for the currently held position
+            prev_offset = cumulative_offset
+            if current_signals:
+                mtm_df = mark_signals_to_market(
+                    option_df=merged_df,
+                    signals=current_signals,
+                    start_date=entry_date,
+                    end_date=exit_date,
+                    contract_multiplier=50.0,
                 )
             else:
-                logger.warning("[%s] Empty mtm_df returned from backtest.", decision_date.date())
+                mtm_df = pd.DataFrame()
+
+            # If MTM is empty, still create a flat daily timeline (portfolio curve continuity).
+            if mtm_df is None or mtm_df.empty:
+                date_col = "Date"
+                mask = (merged_df[date_col] >= pd.to_datetime(entry_date)) & (merged_df[date_col] <= pd.to_datetime(exit_date))
+                dates = (
+                    pd.to_datetime(merged_df.loc[mask, date_col], errors="coerce")
+                    .dropna()
+                    .dt.normalize()
+                    .unique()
+                    .tolist()
+                )
+                dates = sorted(dates)
+                base = current_block_base_portfolio
+                mtm_df = pd.DataFrame(
+                    {
+                        "Date": dates,
+                        "Total_PnL": [prev_offset - base] * len(dates),
+                        "Daily_PnL": [0.0] * len(dates),
+                    }
+                )
+
+            mtm_df = mtm_df.copy()
+            mtm_df = mtm_df.sort_values("Date").reset_index(drop=True)
+            mtm_df["decision_date"] = decision_date_saved
+            mtm_df["entry_date"] = entry_date
+            mtm_df["exit_date"] = exit_date
+            mtm_df["scenario"] = current_scenario
+            mtm_df["strategy_type"] = current_strategy_type
+
+            mtm_df["portfolio_total_pnl"] = mtm_df["Total_PnL"] + current_block_base_portfolio
+            mtm_df["portfolio_total_pnl"] = pd.to_numeric(
+                mtm_df["portfolio_total_pnl"], errors="coerce"
+            ).ffill()
+            mtm_df["portfolio_daily_pnl"] = mtm_df["portfolio_total_pnl"].diff()
+            if len(mtm_df) > 0:
+                mtm_df.loc[0, "portfolio_daily_pnl"] = mtm_df.loc[0, "portfolio_total_pnl"] - prev_offset
+
+            tmp = mtm_df[["portfolio_total_pnl", "portfolio_daily_pnl"]].copy()
+            tmp = tmp.rename(columns={"portfolio_total_pnl": "Total_PnL", "portfolio_daily_pnl": "Daily_PnL"})
+            metrics = summarize_mtm_df(tmp, account_value=account_value)
+
+            cumulative_offset = float(mtm_df["portfolio_total_pnl"].iloc[-1]) if len(mtm_df) else cumulative_offset
+            mtm_parts.append(mtm_df)
+
+            logger.info(
+                "[%s] WEEK MTM DONE | held_scenario=%s | rebalance=%s | cum_pnl=%s | elapsed_cum=%.2fs",
+                decision_date_saved.date(),
+                current_scenario,
+                "Y" if need_rebalance else "N",
+                cumulative_offset,
+                time.perf_counter() - t0,
+            )
 
             # 3.4) DB save
             if save_db:
                 reasoning_text = "\n".join(
                     [
-                        f"Decision date: {decision_date.date()}",
-                        f"Chosen scenario: {scenario}",
-                        f"Strategy type: {strategy_type}",
+                        f"Decision date: {decision_date_saved.date()}",
+                        f"LLM scenario: {scenario}",
+                        f"Executed scenario: {current_scenario}",
+                        f"Strategy type: {current_strategy_type}",
                         f"Key drivers: {key_drivers}",
                         f"Main risks: {main_risks}",
                         f"Strategy background:\n{strategy_background}",
@@ -708,7 +904,7 @@ async def run_full_weekly_timeline(
                 )
                 save_performance_record(
                     run_id=run_id,
-                    decision_date=decision_date,
+                    decision_date=decision_date_saved,
                     final_text=analysis,
                     performance_metrics=metrics,
                     reasoning=reasoning_text,
@@ -717,14 +913,14 @@ async def run_full_weekly_timeline(
 
             weekly_rows.append(
                 {
-                    "decision_date": decision_date,
+                    "decision_date": decision_date_saved,
                     "entry_date": entry_date,
                     "exit_date": exit_date,
                     "direction_probs": direction_probs,
                     "volatility_probs": volatility_probs,
-                    "scenario": scenario,
-                    "strategy_type": strategy_type,
-                    "signals": signals,
+                    "scenario": current_scenario,
+                    "strategy_type": current_strategy_type,
+                    "signals": current_signals,
                     "cum_pnl": metrics.get("cum_pnl"),
                     "return_pct": metrics.get("return_pct"),
                     "ann_return_pct": metrics.get("ann_return_pct"),
@@ -735,6 +931,8 @@ async def run_full_weekly_timeline(
                     "news_selected_count": news_result.get("selected_count"),
                     "news_week_start": news_result.get("week_start"),
                     "news_week_end": news_result.get("week_end"),
+                    "news_selected_urls_preview": (news_result.get("selected_urls") or [])[:5],
+                    "rebalance_reason": ",".join(rebalance_reason) if rebalance_reason else None,
                 }
             )
 

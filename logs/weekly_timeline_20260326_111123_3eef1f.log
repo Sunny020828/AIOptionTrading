@@ -1,0 +1,10 @@
+2026-03-26 19:11:23,628 | INFO | RUN START | run_id=weekly_timeline_20260326_111123_3eef1f | start_date=2024-01-01 | end_date=2024-12-31 | model_name=deepseek-reasoner | account_value=1000000.00 | risk_pct=0.0100 | save_db=True
+2026-03-26 19:11:29,451 | ERROR | RUN FAILED | run_id=weekly_timeline_20260326_111123_3eef1f | error=NDFrame.fillna() got an unexpected keyword argument 'method'
+Traceback (most recent call last):
+  File "e:\Project\6000C_AIOptionTrading\weekly_pipeline.py", line 587, in run_full_weekly_timeline
+    price_chain_df_clean, hsi_df_clean, vhsi_df_clean, index_df = prepare_datasets(
+                                                                  ^^^^^^^^^^^^^^^^^
+  File "e:\Project\6000C_AIOptionTrading\utils\data.py", line 109, in prepare_datasets
+    hsi[col] = hsi[col].fillna(method="ffill")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: NDFrame.fillna() got an unexpected keyword argument 'method'

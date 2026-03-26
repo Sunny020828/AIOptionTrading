@@ -1,0 +1,74 @@
+{
+  "candidate_count": 214,
+  "selected_count": 34,
+  "selected_urls": [
+    "https://abmedia.io/china-lower-interest-rates-to-provide-liquidity",
+    "https://www.hkej.com/dailynews/finnews/article/3670429/%25E4%25BA%25BA%25E8%25A1%258C%25E6%2592%2590%25E6%25B5%25A6%25E6%259D%25B1%25E6%2596%25B0%25E5%258D%2580%25E6%25BB%2599%25E7%25AE%25A1%25E8%25A9%25A6%25E9%25BB%259E%25E6%2594%25B9%25E9%259D%25A9",
+    "https://www.jdonline.com.hk/content_57205.html",
+    "https://www.cw.com.tw/article/5129140",
+    "https://www.hk01.com/%E8%B2%A1%E7%B6%93%E5%BF%AB%E8%A8%8A/984927/%E9%99%B3%E8%8C%82%E6%B3%A2-%E5%A4%96%E8%B3%87%E5%B0%8D%E4%B8%AD%E6%B8%AF%E9%95%B7%E6%9C%9F%E7%99%BC%E5%B1%95%E6%84%9F%E6%A8%82%E8%A7%80-%E6%AD%A3%E7%AD%89%E5%BE%85%E5%90%88%E9%81%A9%E6%8A%95%E8%B3%87%E6%99%82%E6%A9%9F",
+    "https://www.exmoo.com/article/230115.html",
+    "https://www.exmoo.com/article/230116.html",
+    "https://www.jdonline.com.hk/content_85735.html",
+    "https://cn.nytimes.com/business/20240126/japan-nikkei-china-hang-seng/zh-hant",
+    "https://www.hkcd.com.hk/content_app/2024-01/26/content_8620502.html",
+    "https://www.exmoo.com/article/230123.html",
+    "https://www.ctee.com.tw/news/20240126700104-439901",
+    "https://www.exmoo.com/article/230132.html",
+    "https://www.hkej.com/instantnews/hongkong/article/3669972/%E5%A4%A7%E6%91%A9%E8%AA%BF%E4%BD%8E%E6%81%92%E6%8C%87%E4%BB%8A%E5%B9%B4%E5%BA%95%E7%9B%AE%E6%A8%99%E8%87%B316000%E9%BB%9E",
+    "https://hk.crntt.com/doc/93_20731_106867314_1_0125004654.html",
+    "https://finance.mingpao.com/fin/daily/20240125/1706117966256/%E9%A6%AC%E9%9B%B2%E8%94%A1%E5%B4%87%E4%BF%A1%E4%B8%8A%E5%AD%A3%E5%A2%9E%E6%8C%81%E9%98%BF%E9%87%8C-%E5%85%B1%E6%B6%89%E8%B3%87%E9%80%BE15%E5%84%84-%E8%82%A1%E5%83%B9%E6%87%89%E8%81%B2%E5%BD%88",
+    "https://inews.hket.com/article/3695599/%E6%96%B0%E8%82%A1IPO%EF%BD%9C%E9%9B%BB%E5%8B%95%E8%BB%8A%E5%85%85%E9%9B%BB%E8%A8%AD%E5%82%99%E4%BE%9B%E6%87%89%E5%95%86%E6%98%9F%E6%98%9F%E5%85%85%E9%9B%BB%E6%93%9A%E5%A0%B1%E6%93%AC%E4%BE%86%E6%B8%AF%E4%B8%8A%E5%B8%82%E3%80%80%E9%9B%86%E8%B3%87%E7%B4%8439%E5%84%84%E5%85%83",
+    "https://www.tencent.com/zh-hk/articles/2201785.html",
+    "https://www.tkww.hk/a/202401/25/AP65b209d7e4b0868a7af6fb80.html",
+    "https://www.aastocks.com/tc/mobile/newscontent/HK/NOW.1322430",
+    "https://www.exmoo.com/article/230061.html",
+    "https://hk.finance.yahoo.com/news/%E9%A6%99%E6%B8%AF%E8%82%A1%E5%B8%82%E9%87%8D%E6%8C%AB-%E8%A7%B8%E7%99%BC%E9%9D%A2%E5%80%BC16%E5%84%84%E7%BE%8E%E5%85%83%E7%9A%84%E7%89%9B%E7%86%8A%E8%AD%89%E8%A2%AB%E6%94%B6%E5%9B%9E-050706735.html",
+    "https://www.exmoo.com/article/230074.html",
+    "https://www.hkej.com/dailynews/investment/article/3669082/%25E6%2581%2592%25E6%258C%25874%25E5%2580%258D%25E5%25B8%2582%25E7%259B%2588%25E7%258E%2587%25E6%2589%258D%25E7%25AE%2597%25E5%25B9%25B3",
+    "https://www.jdonline.com.hk/content_67530.html",
+    "https://www.exmoo.com/article/230062.html",
+    "https://www.jdonline.com.hk/content_82168.html",
+    "https://www.tradingview.com/news/cnyes:df00091ffacdf:0",
+    "https://www.hk01.com/%E8%B2%A1%E7%B6%93%E5%BF%AB%E8%A8%8A/984334/%E5%A5%B3%E8%82%A1%E7%A5%9E-%E5%8A%89%E5%A4%AE%E5%94%B1%E6%B7%A1-%E5%83%85%E5%85%A9%E7%A8%AE%E6%83%85%E6%B3%81%E6%89%8D%E8%83%BD%E6%95%91%E6%B8%AF%E8%82%A1-%E6%83%9F%E7%9F%AD%E6%9C%9F%E7%9A%86%E9%9B%A3%E7%99%BC%E7%94%9F",
+    "https://www.blocktempo.com/gpt-4-beats-wall-street-performance-stock-picking-performance-returns-exceed-40",
+    "https://www.wsj.com/video/china/zh-hant/0BBD719C-0F04-4A08-990E-54DFEC478E61",
+    "https://www.wsj.com/video/china/zh-hant/4E8E64C0-B711-4933-9E91-5A1552080D09",
+    "https://www.ctee.com.tw/news/20240124700050-439901",
+    "https://www.hkej.com/dailynews/headline/article/3668481/%25E9%25AB%2598%25E7%259B%259B%25E6%2596%2599%25E7%259F%25AD%25E7%25B7%259AA%25E8%2582%25A1%25E8%25B7%2591%25E8%25B4%258F%25E6%2581%2592%25E6%258C%2587"
+  ],
+  "analysis": {
+    "direction_probs": {
+      "bull": 0.4,
+      "bear": 0.3,
+      "range": 0.3
+    },
+    "volatility_probs": {
+      "low_vol": 0.2,
+      "medium_vol": 0.3,
+      "high_vol": 0.5
+    },
+    "strategy_background": "基于人行降准和政策刺激预期，市场可能短期技术性反弹，但结构性问题和风险仍存，需谨慎操作。",
+    "key_drivers": [
+      "PBOC降准0.5个百分点，注入约1万亿元流动性以提振市场信心",
+      "国企市值管理改革预期推动中字头股票上涨",
+      "估值偏低吸引部分长期投资者，如桥水基金看好中国资产",
+      "全球市场情绪及美联储降息预期影响资金流向"
+    ],
+    "main_risks": [
+      "刺激政策效果不及预期，经济复苏乏力",
+      "外资持续流出中国股市，市场流动性紧张",
+      "地缘政治紧张局势升级，影响全球风险偏好",
+      "企业盈利下滑风险，尤其房地产行业危机蔓延"
+    ],
+    "scenario": "bull_highvol"
+  },
+  "elapsed_sec": 299.831,
+  "created_at": 1774528918.3923886,
+  "meta": {
+    "model_name": "deepseek-reasoner",
+    "candidate_limit": 250,
+    "max_pick_for_fulltext": 35,
+    "keyword": null
+  }
+}
