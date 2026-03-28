@@ -1,0 +1,7 @@
+data/merged_df.csv
+__pycache__/
+*.pyc
+.env
+venv/
+.DS_Store
+.ipynb_checkpoints/
