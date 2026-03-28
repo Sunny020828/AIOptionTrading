@@ -410,15 +410,44 @@ def filter_liquid_options(df: pd.DataFrame, min_volume: int = 10, min_oi: int = 
     return out
 
 
-def calculate_position_size(max_loss_per_trade, account_value=1_000_000, risk_pct=0.01):
+def calculate_position_size(
+    max_loss_per_trade,
+    account_value=1_000_000,
+    risk_pct=0.01,
+    capital_alloc_pct=0.05,
+    min_qty=1
+):
     """
-    Calculate number of contracts based on risk budget.
+    Hybrid sizing:
+    - Risk constraint
+    - Capital deployment constraint
+
+    Position size must satisfy BOTH:
+        • Max loss risk budget
+        • Capital allocation budget
     """
-    risk_amount = account_value * risk_pct
+
     if max_loss_per_trade <= 0:
         return 0
-    qty = int(risk_amount // max_loss_per_trade)
-    return max(qty, 1)
+
+    # --------------------------
+    # ① Risk budget sizing
+    # --------------------------
+    risk_budget = account_value * risk_pct
+    qty_risk = risk_budget // max_loss_per_trade
+
+    # --------------------------
+    # ② Capital deployment sizing
+    # --------------------------
+    capital_budget = account_value * capital_alloc_pct
+    qty_capital = capital_budget // max_loss_per_trade
+
+    # --------------------------
+    # ③ Final qty must respect BOTH
+    # --------------------------
+    qty = int(min(qty_risk, qty_capital))
+
+    return max(qty, min_qty)
 
 
 def generate_single_spread(
