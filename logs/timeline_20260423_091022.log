@@ -1,0 +1,11 @@
+2026-04-23 17:10:22,555 | INFO | RUN START | run_id=timeline_20260423_091022 | start_date=2025-01-01 | end_date=2025-12-31 | model_name=deepseek-reasoner | account_size=1000000.00 | risk_pct=0.0500 | save_db=False | search_news=False
+2026-04-23 17:10:30,921 | INFO | DAILY FEATURES READY | rows=2498
+2026-04-23 17:10:31,024 | INFO | Timeline ready | run_id=timeline_20260423_091022 | n_windows=12
+2026-04-23 17:10:31,055 | INFO | [01/12] MONTH START | decision_date=2024-12-31 | entry_date=2025-01-03 | exit_date=2025-01-31 | month_key=2024-12 | cumulative_offset_before=0.00
+2026-04-23 17:10:31,088 | INFO | [2024-12-31] WEEKLY OVERLAY LOADED FROM DB
+2026-04-23 17:10:52,133 | INFO | [2024-12-31] TRADER OUTPUT | direction=range | vol=highvol | strength=medium | direction_probs={"bull": 0.2, "bear": 0.35, "range": 0.45} | vol_probs={"low_vol": 0.1, "medium_vol": 0.4, "high_vol": 0.5} | entry_mode=normal | effective_risk_pct=0.05 | warning_msg=None |
+2026-04-23 17:10:53,030 | INFO | RISK MGMT START | strategy_type=iron_condor | qty=2.0 | max_risk=36900.00 | stop_threshold=-22140.00 | delta_limit=300.00
+2026-04-23 17:10:56,195 | INFO | RISK MGMT END | no risk exit triggered
+2026-04-23 17:10:56,197 | INFO | [2024-12-31] MONTH END ｜ cum_pnl=3100.0 | return_pct=0.0031 | sharpe=2.5740294892726663 | max_dd=-0.0039000000000000146 | elapsed=25.143s
+2026-04-23 17:10:56,198 | INFO | [02/12] MONTH START | decision_date=2025-01-31 | entry_date=2025-02-03 | exit_date=2025-02-28 | month_key=2025-01 | cumulative_offset_before=3100.00
+2026-04-23 17:10:56,206 | INFO | [2025-01-31] WEEKLY OVERLAY LOADED FROM DB

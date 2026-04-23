@@ -1,0 +1,64 @@
+2026-03-31 15:52:00,585 | INFO | RUN START | run_id=timeline_20260331_075200 | start_date=2024-01-01 | end_date=2024-12-31 | model_name=deepseek-reasoner | account_size=1000000.00 | risk_pct=0.0200 | save_db=False | search_news=False
+2026-03-31 15:52:09,196 | INFO | DAILY FEATURES READY | rows=2498
+2026-03-31 15:52:09,294 | INFO | Timeline ready | run_id=timeline_20260331_075200 | n_windows=11
+2026-03-31 15:52:09,323 | INFO | [01/11] MONTH START | decision_date=2024-01-31 | entry_date=2024-02-01 | exit_date=2024-02-29 | month_key=2024-01 | cumulative_offset_before=0.00
+2026-03-31 15:52:09,370 | INFO | [2024-01-31] WEEKLY OVERLAY LOADED FROM DB
+2026-03-31 15:53:25,072 | INFO | [2024-01-31] TRADER OUTPUT | direction=bear | vol=medianvol | strength=medium | direction_probs={"bull": 0.25, "bear": 0.45, "range": 0.3} | vol_probs={"low_vol": 0.1, "medium_vol": 0.55, "high_vol": 0.35} | entry_mode=normal | effective_risk_pct=0.02 | warning_msg=None |
+2026-03-31 15:53:25,901 | INFO | [2024-01-31] MONTH END ｜ cum_pnl=nan | return_pct=nan | sharpe=nan | max_dd=nan | elapsed=76.578s
+2026-03-31 15:53:25,901 | INFO | [02/11] MONTH START | decision_date=2024-02-29 | entry_date=2024-03-01 | exit_date=2024-03-29 | month_key=2024-02 | cumulative_offset_before=0.00
+2026-03-31 15:53:25,916 | INFO | [2024-02-29] WEEKLY OVERLAY LOADED FROM DB
+2026-03-31 15:54:35,540 | INFO | [2024-02-29] TRADER OUTPUT | direction=range | vol=lowvol | strength=medium | direction_probs={"bull": 0.4, "bear": 0.2, "range": 0.4} | vol_probs={"low_vol": 0.7000000000000001, "medium_vol": 0.20000000000000004, "high_vol": 0.10000000000000002} | entry_mode=normal | effective_risk_pct=0.02 | warning_msg=None |
+2026-03-31 15:54:36,496 | INFO | RISK MGMT SKIPPED | strategy_type=no_trade
+2026-03-31 15:54:36,498 | INFO | [2024-02-29] MONTH END ｜ cum_pnl=0.0 | return_pct=0.0 | sharpe=nan | max_dd=0.0 | elapsed=70.597s
+2026-03-31 15:54:36,499 | INFO | [03/11] MONTH START | decision_date=2024-03-29 | entry_date=2024-04-01 | exit_date=2024-04-30 | month_key=2024-03 | cumulative_offset_before=0.00
+2026-03-31 15:54:36,531 | INFO | [2024-03-29] WEEKLY OVERLAY LOADED FROM DB
+2026-03-31 15:55:58,295 | INFO | [2024-03-29] TRADER OUTPUT | direction=bull | vol=lowvol | strength=medium | direction_probs={"bull": 0.7, "bear": 0.05, "range": 0.25} | vol_probs={"low_vol": 0.8, "medium_vol": 0.15, "high_vol": 0.05} | entry_mode=normal | effective_risk_pct=0.02 | warning_msg=None |
+2026-03-31 15:55:59,280 | INFO | RISK MGMT START | strategy_type=call_debit_spread | qty=3.0 | max_risk=15150.00 | stop_threshold=-15150.00 | delta_limit=300.00
+2026-03-31 15:56:01,514 | INFO | RISK MGMT END | no risk exit triggered
+2026-03-31 15:56:01,516 | INFO | [2024-03-29] MONTH END ｜ cum_pnl=12450.0 | return_pct=0.01245 | sharpe=2.8483480727370605 | max_dd=-0.013607137516821965 | elapsed=85.018s
+2026-03-31 15:56:01,517 | INFO | [04/11] MONTH START | decision_date=2024-04-30 | entry_date=2024-05-01 | exit_date=2024-05-31 | month_key=2024-04 | cumulative_offset_before=12450.00
+2026-03-31 15:56:01,532 | INFO | [2024-04-30] WEEKLY OVERLAY LOADED FROM DB
+2026-03-31 15:57:05,038 | INFO | [2024-04-30] TRADER OUTPUT | direction=range | vol=medianvol | strength=medium | direction_probs={"bull": 0.5, "bear": 0.1, "range": 0.4} | vol_probs={"low_vol": 0.1, "medium_vol": 0.7, "high_vol": 0.2} | entry_mode=normal | effective_risk_pct=0.02 | warning_msg=None |
+2026-03-31 15:57:06,031 | INFO | RISK MGMT START | strategy_type=iron_condor | qty=1.0 | max_risk=17450.00 | stop_threshold=-17450.00 | delta_limit=300.00
+2026-03-31 15:57:09,789 | INFO | RISK MGMT END | no risk exit triggered
+2026-03-31 15:57:09,791 | INFO | [2024-04-30] MONTH END ｜ cum_pnl=2650.0 | return_pct=0.00265 | sharpe=3.6908861598616935 | max_dd=-0.0016984713757618453 | elapsed=68.274s
+2026-03-31 15:57:09,791 | INFO | [05/11] MONTH START | decision_date=2024-05-31 | entry_date=2024-06-03 | exit_date=2024-06-28 | month_key=2024-05 | cumulative_offset_before=15100.00
+2026-03-31 15:57:09,806 | INFO | [2024-05-31] WEEKLY OVERLAY LOADED FROM DB
+2026-03-31 15:58:35,388 | INFO | [2024-05-31] TRADER OUTPUT | direction=range | vol=highvol | strength=medium | direction_probs={"bull": 0.2, "bear": 0.3, "range": 0.5} | vol_probs={"low_vol": 0.1, "medium_vol": 0.4, "high_vol": 0.5} | entry_mode=normal | effective_risk_pct=0.02 | warning_msg=None |
+2026-03-31 15:58:36,462 | INFO | RISK MGMT START | strategy_type=iron_condor | qty=1.0 | max_risk=18350.00 | stop_threshold=-18350.00 | delta_limit=300.00
+2026-03-31 15:58:39,846 | INFO | RISK MGMT END | no risk exit triggered
+2026-03-31 15:58:39,848 | INFO | [2024-05-31] MONTH END ｜ cum_pnl=1350.0 | return_pct=0.00135 | sharpe=2.543119837916957 | max_dd=-0.0012471315973261454 | elapsed=90.057s
+2026-03-31 15:58:39,848 | INFO | [06/11] MONTH START | decision_date=2024-06-28 | entry_date=2024-07-01 | exit_date=2024-07-31 | month_key=2024-06 | cumulative_offset_before=16450.00
+2026-03-31 15:58:39,860 | INFO | [2024-06-28] WEEKLY OVERLAY LOADED FROM DB
+2026-03-31 15:59:38,270 | INFO | [2024-06-28] TRADER OUTPUT | direction=bear | vol=lowvol | strength=medium | direction_probs={"bull": 0.1, "bear": 0.65, "range": 0.25} | vol_probs={"low_vol": 0.7, "medium_vol": 0.25, "high_vol": 0.05} | entry_mode=normal | effective_risk_pct=0.02 | warning_msg=None |
+2026-03-31 15:59:39,210 | INFO | RISK MGMT START | strategy_type=put_debit_spread | qty=6.0 | max_risk=18000.00 | stop_threshold=-18000.00 | delta_limit=300.00
+2026-03-31 15:59:41,802 | INFO | RISK MGMT END | no risk exit triggered
+2026-03-31 15:59:41,806 | INFO | [2024-06-28] MONTH END ｜ cum_pnl=3000.0 | return_pct=0.003 | sharpe=0.5188213660684289 | max_dd=-0.009891098011789334 | elapsed=61.958s
+2026-03-31 15:59:41,806 | INFO | [07/11] MONTH START | decision_date=2024-07-31 | entry_date=2024-08-01 | exit_date=2024-08-30 | month_key=2024-07 | cumulative_offset_before=19450.00
+2026-03-31 15:59:41,817 | INFO | [2024-07-31] WEEKLY OVERLAY LOADED FROM DB
+2026-03-31 16:00:51,572 | INFO | [2024-07-31] TRADER OUTPUT | direction=bear | vol=medianvol | strength=medium | direction_probs={"bull": 0.15, "bear": 0.5, "range": 0.35} | vol_probs={"low_vol": 0.1, "medium_vol": 0.6, "high_vol": 0.3} | entry_mode=normal | effective_risk_pct=0.02 | warning_msg=None |
+2026-03-31 16:00:52,459 | INFO | [2024-07-31] MONTH END ｜ cum_pnl=nan | return_pct=nan | sharpe=nan | max_dd=nan | elapsed=70.653s
+2026-03-31 16:00:52,460 | INFO | [08/11] MONTH START | decision_date=2024-08-30 | entry_date=2024-09-02 | exit_date=2024-09-30 | month_key=2024-08 | cumulative_offset_before=19450.00
+2026-03-31 16:00:52,473 | INFO | [2024-08-30] WEEKLY OVERLAY LOADED FROM DB
+2026-03-31 16:01:55,800 | INFO | [2024-08-30] TRADER OUTPUT | direction=bull | vol=lowvol | strength=medium | direction_probs={"bull": 0.65, "bear": 0.1, "range": 0.25} | vol_probs={"low_vol": 0.7, "medium_vol": 0.25, "high_vol": 0.05} | entry_mode=normal | effective_risk_pct=0.02 | warning_msg=None |
+2026-03-31 16:01:56,709 | INFO | RISK MGMT START | strategy_type=call_debit_spread | qty=2.0 | max_risk=14700.00 | stop_threshold=-14700.00 | delta_limit=300.00
+2026-03-31 16:01:58,865 | INFO | RISK MGMT END | no risk exit triggered
+2026-03-31 16:01:58,867 | INFO | [2024-08-30] MONTH END ｜ cum_pnl=59200.0 | return_pct=0.0592 | sharpe=9.82116334812099 | max_dd=-0.008499999999999952 | elapsed=66.407s
+2026-03-31 16:01:58,867 | INFO | [09/11] MONTH START | decision_date=2024-09-30 | entry_date=2024-10-01 | exit_date=2024-10-31 | month_key=2024-09 | cumulative_offset_before=78650.00
+2026-03-31 16:01:58,892 | INFO | [2024-09-30] WEEKLY OVERLAY LOADED FROM DB
+2026-03-31 16:02:47,570 | INFO | [2024-09-30] TRADER OUTPUT | direction=bull | vol=highvol | strength=medium | direction_probs={"bull": 0.7, "bear": 0.1, "range": 0.2} | vol_probs={"low_vol": 0.1, "medium_vol": 0.3, "high_vol": 0.6} | entry_mode=normal | effective_risk_pct=0.02 | warning_msg=None |
+2026-03-31 16:02:48,248 | INFO | RISK MGMT START | strategy_type=put_credit_spread | qty=2.0 | max_risk=14800.00 | stop_threshold=-14800.00 | delta_limit=300.00
+2026-03-31 16:02:50,581 | INFO | RISK MGMT END | no risk exit triggered
+2026-03-31 16:02:50,583 | INFO | [2024-09-30] MONTH END ｜ cum_pnl=-6900.0 | return_pct=-0.0069 | sharpe=-2.0732504693569807 | max_dd=-0.007892107892107925 | elapsed=51.716s
+2026-03-31 16:02:50,583 | INFO | [10/11] MONTH START | decision_date=2024-10-31 | entry_date=2024-11-01 | exit_date=2024-11-29 | month_key=2024-10 | cumulative_offset_before=71750.00
+2026-03-31 16:02:50,595 | INFO | [2024-10-31] WEEKLY OVERLAY LOADED FROM DB
+2026-03-31 16:03:41,340 | INFO | [2024-10-31] TRADER OUTPUT | direction=bull | vol=highvol | strength=medium | direction_probs={"bull": 0.55, "bear": 0.2, "range": 0.25} | vol_probs={"low_vol": 0.1, "medium_vol": 0.3, "high_vol": 0.6} | entry_mode=normal | effective_risk_pct=0.02 | warning_msg=None |
+2026-03-31 16:03:41,989 | INFO | RISK MGMT START | strategy_type=put_credit_spread | qty=2.0 | max_risk=15100.00 | stop_threshold=-15100.00 | delta_limit=300.00
+2026-03-31 16:03:44,352 | INFO | RISK MGMT END | no risk exit triggered
+2026-03-31 16:03:44,355 | INFO | [2024-10-31] MONTH END ｜ cum_pnl=-1500.0 | return_pct=-0.0015 | sharpe=-0.9184826065474633 | max_dd=-0.005392450569203122 | elapsed=53.772s
+2026-03-31 16:03:44,355 | INFO | [11/11] MONTH START | decision_date=2024-11-29 | entry_date=2024-12-02 | exit_date=2024-12-31 | month_key=2024-11 | cumulative_offset_before=70250.00
+2026-03-31 16:03:44,365 | INFO | [2024-11-29] WEEKLY OVERLAY LOADED FROM DB
+2026-03-31 16:04:39,492 | INFO | [2024-11-29] TRADER OUTPUT | direction=bear | vol=medianvol | strength=medium | direction_probs={"bull": 0.15, "bear": 0.6, "range": 0.25} | vol_probs={"low_vol": 0.1, "medium_vol": 0.6, "high_vol": 0.3} | entry_mode=normal | effective_risk_pct=0.02 | warning_msg=None |
+2026-03-31 16:04:40,024 | INFO | [2024-11-29] MONTH END ｜ cum_pnl=nan | return_pct=nan | sharpe=nan | max_dd=nan | elapsed=55.669s
+2026-03-31 16:04:40,032 | INFO | OVERALL METRICS={"n_days": 239, "cum_pnl": 70250.0, "return_pct": 0.07025, "ann_return_pct": 0.07420961662254388, "ann_vol_pct": 0.042623651714207886, "sharpe": 1.7410431447807495, "max_drawdown_pct": -0.017302551640340225, "win_rate_daily": 0.35564853556485354}
+2026-03-31 16:04:40,032 | INFO | RUN END | run_id=timeline_20260331_075200 | total_elapsed=759.450s

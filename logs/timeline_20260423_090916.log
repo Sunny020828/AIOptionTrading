@@ -1,0 +1,35 @@
+2026-04-23 17:09:16,351 | INFO | RUN START | run_id=timeline_20260423_090916 | start_date=2025-01-01 | end_date=2025-12-31 | model_name=deepseek-reasoner | account_size=1000000.00 | risk_pct=0.0500 | save_db=False | search_news=False
+2026-04-23 17:09:24,876 | INFO | DAILY FEATURES READY | rows=2498
+2026-04-23 17:09:24,971 | INFO | Timeline ready | run_id=timeline_20260423_090916 | n_windows=12
+2026-04-23 17:09:25,018 | INFO | [01/12] MONTH START | decision_date=2024-12-31 | entry_date=2025-01-03 | exit_date=2025-01-31 | month_key=2024-12 | cumulative_offset_before=0.00
+2026-04-23 17:09:25,071 | INFO | [2024-12-31] WEEKLY OVERLAY LOADED FROM DB
+2026-04-23 17:09:25,698 | ERROR | [2024-12-31 00:00:00] MONTH FAILED | entry_date=2025-01-03 00:00:00 | exit_date=2025-01-31 00:00:00 | error=Error code: 401 - {'error': {'message': 'Authentication Fails, Your api key: ****b15b is invalid', 'type': 'authentication_error', 'param': None, 'code': 'invalid_request_error'}}
+Traceback (most recent call last):
+  File "/Users/ostrichzhang/Desktop/HKUST/25-26Spring/6000C/Group8_AIOptionTrading/Codes/pipeline.py", line 727, in run_full_timeline
+    reasoning, final_text = call_llm(
+  File "/Users/ostrichzhang/Desktop/HKUST/25-26Spring/6000C/Group8_AIOptionTrading/Codes/models/trader_model_v2.py", line 484, in call_llm
+    response = client.chat.completions.create(
+  File "/Users/ostrichzhang/WorkSpace/SoftWare/miniconda3/envs/ophr/lib/python3.10/site-packages/openai/_utils/_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/ostrichzhang/WorkSpace/SoftWare/miniconda3/envs/ophr/lib/python3.10/site-packages/openai/resources/chat/completions/completions.py", line 1211, in create
+    return self._post(
+  File "/Users/ostrichzhang/WorkSpace/SoftWare/miniconda3/envs/ophr/lib/python3.10/site-packages/openai/_base_client.py", line 1297, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File "/Users/ostrichzhang/WorkSpace/SoftWare/miniconda3/envs/ophr/lib/python3.10/site-packages/openai/_base_client.py", line 1070, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Authentication Fails, Your api key: ****b15b is invalid', 'type': 'authentication_error', 'param': None, 'code': 'invalid_request_error'}}
+2026-04-23 17:09:25,706 | ERROR | RUN FAILED | run_id=timeline_20260423_090916 | error=Error code: 401 - {'error': {'message': 'Authentication Fails, Your api key: ****b15b is invalid', 'type': 'authentication_error', 'param': None, 'code': 'invalid_request_error'}}
+Traceback (most recent call last):
+  File "/Users/ostrichzhang/Desktop/HKUST/25-26Spring/6000C/Group8_AIOptionTrading/Codes/pipeline.py", line 727, in run_full_timeline
+    reasoning, final_text = call_llm(
+  File "/Users/ostrichzhang/Desktop/HKUST/25-26Spring/6000C/Group8_AIOptionTrading/Codes/models/trader_model_v2.py", line 484, in call_llm
+    response = client.chat.completions.create(
+  File "/Users/ostrichzhang/WorkSpace/SoftWare/miniconda3/envs/ophr/lib/python3.10/site-packages/openai/_utils/_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/ostrichzhang/WorkSpace/SoftWare/miniconda3/envs/ophr/lib/python3.10/site-packages/openai/resources/chat/completions/completions.py", line 1211, in create
+    return self._post(
+  File "/Users/ostrichzhang/WorkSpace/SoftWare/miniconda3/envs/ophr/lib/python3.10/site-packages/openai/_base_client.py", line 1297, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File "/Users/ostrichzhang/WorkSpace/SoftWare/miniconda3/envs/ophr/lib/python3.10/site-packages/openai/_base_client.py", line 1070, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Authentication Fails, Your api key: ****b15b is invalid', 'type': 'authentication_error', 'param': None, 'code': 'invalid_request_error'}}
